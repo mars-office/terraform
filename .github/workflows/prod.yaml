@@ -21,6 +21,8 @@ on:
 
 jobs:
   terraform_plan:
+    permissions:
+      pull-requests: write
     uses: mars-office/.github/.github/workflows/terraform_plan.yaml@main
     with:
       env: prod
