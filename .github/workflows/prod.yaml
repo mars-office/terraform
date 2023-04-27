@@ -27,3 +27,4 @@ jobs:
     with:
       env: prod
       appName: huna
+    secrets: inherit
