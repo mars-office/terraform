@@ -1,6 +1,9 @@
 terraform {
   cloud {
     organization = "mars-office"
+    workspaces {
+      name = "prod"
+    }
   }
 }
 

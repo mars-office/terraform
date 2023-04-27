@@ -26,5 +26,4 @@ jobs:
     uses: mars-office/.github/.github/workflows/terraform.yaml@main
     with:
       env: dev
-      appName: huna
     secrets: inherit
