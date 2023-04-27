@@ -1,0 +1,24 @@
+name: 'Terraform DEV'
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'dev/**'
+      - 'modules/**'
+      - '.github/workflows/dev.yaml'
+
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'dev/**'
+      - 'modules/**'
+      - '.github/workflows/dev.yaml'
+
+jobs:
+  terraform_plan:
+    uses: mars-office/.github/.github/workflows/terraform_plan.yaml@main
+    with:
+      env: dev

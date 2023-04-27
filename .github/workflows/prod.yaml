@@ -1,0 +1,24 @@
+name: 'Terraform PROD'
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'prod/**'
+      - 'modules/**'
+      - '.github/workflows/prod.yaml'
+
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'prod/**'
+      - 'modules/**'
+      - '.github/workflows/prod.yaml'
+
+jobs:
+  terraform_plan:
+    uses: mars-office/.github/.github/workflows/terraform_plan.yaml@main
+    with:
+      env: prod

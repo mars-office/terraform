@@ -1,0 +1,24 @@
+name: 'Terraform UAT'
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'uat/**'
+      - 'modules/**'
+      - '.github/workflows/uat.yaml'
+
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'uat/**'
+      - 'modules/**'
+      - '.github/workflows/uat.yaml'
+
+jobs:
+  terraform_plan:
+    uses: mars-office/.github/.github/workflows/terraform_plan.yaml@main
+    with:
+      env: uat
