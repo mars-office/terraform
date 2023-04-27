@@ -20,10 +20,10 @@ on:
       - '.github/workflows/uat.yaml'
 
 jobs:
-  terraform_plan:
+  terraform:
     permissions:
       pull-requests: write
-    uses: mars-office/.github/.github/workflows/terraform_plan.yaml@main
+    uses: mars-office/.github/.github/workflows/terraform.yaml@main
     with:
       env: uat
       appName: huna
