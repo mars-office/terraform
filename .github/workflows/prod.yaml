@@ -2,7 +2,7 @@ name: 'Terraform PROD'
 
 on:
   workflow_dispatch:
-    
+
   push:
     branches:
       - main
@@ -24,3 +24,5 @@ jobs:
     uses: mars-office/.github/.github/workflows/terraform_plan.yaml@main
     with:
       env: prod
+    secrets:
+      terraformToken: ${{ secrets.TERRAFORM_TEAM_TOKEN }}
