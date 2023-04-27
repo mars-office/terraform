@@ -24,5 +24,6 @@ jobs:
     uses: mars-office/.github/.github/workflows/terraform_plan.yaml@main
     with:
       env: prod
+      appName: huna
     secrets:
       terraformToken: ${{ secrets.TERRAFORM_TEAM_TOKEN }}
