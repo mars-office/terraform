@@ -1,6 +1,6 @@
 variable "env" {
   type = string
-  default = "uat"
+  default = "local"
 }
 
 variable "testSecret" {
