@@ -27,5 +27,4 @@ jobs:
     with:
       env: prod
       appName: huna
-    secrets:
-      terraformToken: ${{ secrets.TERRAFORM_TEAM_TOKEN }}
+    secrets: inherit
