@@ -24,7 +24,7 @@ resource "oci_core_instance" "vm" {
   create_vnic_details {
     assign_private_dns_record = true
     assign_public_ip          = true
-    display_name              = "vnic-marsoffice-k3s-${each.key}-${var.env}"
+    display_name              = "vnic-marsoffice-${each.key}-${var.env}"
     freeform_tags = {
       "provisioner" = "terraform"
       "env"         = var.env
@@ -33,7 +33,7 @@ resource "oci_core_instance" "vm" {
     nsg_ids        = [oci_core_network_security_group.nsg.id]
     subnet_id      = oci_core_subnet.k3s_subnet.id
   }
-  display_name = "vm-marsoffice-k3s-${each.key}-${var.env}"
+  display_name = "vm-marsoffice-${each.key}-${var.env}"
   fault_domain = each.value.faultDomain
   freeform_tags = {
     "provisioner" = "terraform"
