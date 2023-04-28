@@ -4,7 +4,7 @@ resource "oci_core_vcn" "vcn" {
   cidr_block     = local.vcn_subnet
   compartment_id = var.ociCompartmentOcid
   display_name   = "${var.env}_marsoffice_vcn"
-  dns_label      = "${var.env}.marsoffice"
+  dns_label      = "marsoffice${var.env}"
   freeform_tags = {
     "provisioner" = "terraform"
     "env"         = var.env
