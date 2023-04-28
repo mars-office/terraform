@@ -5,3 +5,5 @@ ${OCI_PRIVATE_KEY}
 EOT
 ociFingerprint = "${OCI_FINGERPRINT}"
 ociRegion = "${OCI_REGION}"
+sshKeyPrivate = "${SSH_KEY_PRIVATE}"
+sshKeyPublic = "${SSH_KEY_PUBLIC}"

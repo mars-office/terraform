@@ -27,3 +27,13 @@ variable "ociRegion" {
   type = string
   sensitive = true
 }
+
+variable "sshKeyPrivate" {
+  type = string
+  sensitive = true
+}
+
+variable "sshKeyPublic" {
+  type = string
+  sensitive = true
+}
