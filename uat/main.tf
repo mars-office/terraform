@@ -15,4 +15,5 @@ module "oci" {
   ociFingerprint = var.ociFingerprint
   ociRegion = var.ociRegion
   ociCompartmentOcid = var.ociCompartmentOcid
+  env = var.env
 }
