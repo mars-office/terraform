@@ -1,4 +1,5 @@
 ociTenancyOcid = "${OCI_TENANCY_OCID}"
+ociCompartmentOcid = "${OCI_COMPARTMENT_OCID}"
 ociUserOcid = "${OCI_USER_OCID}"
 ociPrivateKey = <<-EOT
 ${OCI_PRIVATE_KEY}

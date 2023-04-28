@@ -8,6 +8,11 @@ variable "ociTenancyOcid" {
   sensitive = true
 }
 
+variable "ociCompartmentOcid" {
+  type = string
+  sensitive = true
+}
+
 variable "ociUserOcid" {
   type = string
   sensitive = true
