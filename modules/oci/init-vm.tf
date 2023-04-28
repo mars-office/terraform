@@ -14,6 +14,7 @@ data "cloudinit_config" "init_vm" {
     content_type = "text/x-shellscript"
     content = templatefile("${path.module}/scripts/init_vm.sh", {
       k3s_token = random_password.k3s_token.result
+      k3s_url = ""
       master = "${each.value.master}"
       primary = "${each.value.primary}"
     })
