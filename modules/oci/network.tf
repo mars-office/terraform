@@ -3,8 +3,8 @@
 resource "oci_core_vcn" "vcn" {
   cidr_block     = local.vcn_subnet
   compartment_id = var.ociCompartmentOcid
-  display_name   = "marsoffice_vcn"
-  dns_label      = "marsoffice"
+  display_name   = "${var.env}_marsoffice_vcn"
+  dns_label      = "${var.env}.marsoffice"
   freeform_tags = {
     "provisioner" = "terraform"
     "env"         = var.env
@@ -14,7 +14,7 @@ resource "oci_core_vcn" "vcn" {
 resource "oci_core_default_security_list" "security_list" {
   compartment_id             = var.ociCompartmentOcid
   manage_default_resource_id = oci_core_vcn.vcn.default_security_list_id
-  display_name               = "marsoffice_security_list"
+  display_name               = "${var.env}_marsoffice_security_list"
   egress_security_rules {
     destination = "0.0.0.0/0"
     protocol    = "all"
@@ -43,7 +43,7 @@ resource "oci_core_default_security_list" "security_list" {
 resource "oci_core_subnet" "k3s_subnet" {
   cidr_block        = local.k3s_subnet
   compartment_id    = var.ociCompartmentOcid
-  display_name      = "k3s_subnet"
+  display_name      = "${var.env}_k3s_subnet"
   dns_label         = "k3s"
   route_table_id    = oci_core_vcn.vcn.default_route_table_id
   vcn_id            = oci_core_vcn.vcn.id
@@ -57,7 +57,7 @@ resource "oci_core_subnet" "k3s_subnet" {
 
 resource "oci_core_internet_gateway" "internet_gateway" {
   compartment_id = var.ociCompartmentOcid
-  display_name   = "marsoffice_internet_gateway"
+  display_name   = "${var.env}_marsoffice_internet_gateway"
   enabled        = "true"
   vcn_id         = oci_core_vcn.vcn.id
   freeform_tags = {
@@ -80,7 +80,7 @@ resource "oci_core_default_route_table" "default_oci_core_default_route_table" {
 resource "oci_core_network_security_group" "nsg" {
   compartment_id = var.ociCompartmentOcid
   vcn_id         = oci_core_vcn.vcn.id
-  display_name   = "marsoffice_k3s_nsg"
+  display_name   = "${var.env}_marsoffice_k3s_nsg"
 
   freeform_tags = {
     "provisioner" = "terraform"
