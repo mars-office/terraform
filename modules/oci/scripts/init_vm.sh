@@ -5,6 +5,7 @@ export MASTER="${master}"
 export PRIMARY="${primary}"
 export TOKEN="${k3s_token}"
 export SERVER="${k3s_url}"
+export PUBLICIP=$(curl -s ifconfig.co)
 
 # Disable firewall
 /usr/sbin/netfilter-persistent stop
@@ -26,7 +27,7 @@ if [ "$MASTER" = "true" ]; then
     # master
     if [ "$PRIMARY" = "true" ]; then
         # primary
-        export INSTALL_K3S_EXEC="server --disable traefik --cluster-init"
+        export INSTALL_K3S_EXEC="server --disable traefik --tls-san $PUBLICIP --cluster-init"
     else
         # secondary
         export K3S_URL=$SERVER
