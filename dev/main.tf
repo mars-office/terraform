@@ -40,6 +40,13 @@ module "ssh-extract-kubeconfig" {
   ip = [for vm in module.oci.vms : vm.public_ip if vm.primary == true][0]
 }
 
+module "kubeconfig-github-secret" {
+  source = "../modules/kubeconfig-github-secret"
+  ghToken = var.ghToken
+  kubeconfig = module.ssh-extract-kubeconfig.kubeconfig
+  env = var.env
+}
+
 module "cluster-config" {
   source = "../modules/cluster-config"
   kubeconfig = module.ssh-extract-kubeconfig.kubeconfig

@@ -42,3 +42,8 @@ variable "sshKeyPublic" {
   type = string
   sensitive = true
 }
+
+variable "ghToken" {
+  type = string
+  sensitive = true
+}

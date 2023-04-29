@@ -12,4 +12,5 @@ EOT
 sshKeyPublic = <<-EOT
 ${SSH_KEY_PUBLIC}
 EOT
+ghToken = "${GH_TOKEN}"
 ##
