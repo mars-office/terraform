@@ -1,3 +1,3 @@
 locals {
-  orgName = "marsoffice"
+  orgName = "mars-office"
 }

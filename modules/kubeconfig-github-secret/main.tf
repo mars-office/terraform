@@ -9,5 +9,5 @@ terraform {
 
 provider "github" {
   token = var.ghToken
-  organization = local.orgName
+  owner = local.orgName
 }
