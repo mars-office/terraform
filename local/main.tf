@@ -12,6 +12,6 @@ module "cluster-config" {
     ingestionKey = var.newRelicIngestionLicenseKey
   }
   prometheus = {
-    enabled = false
+    enabled = true
   }
 }
