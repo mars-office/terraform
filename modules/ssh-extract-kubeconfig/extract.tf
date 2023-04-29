@@ -3,7 +3,8 @@ resource "ssh_sensitive_resource" "cat" {
   host         = var.ip
   user         = "ubuntu"
   private_key = var.sshKeyPrivate
-  timeout = "30s"
+  retry_delay = "2s"
+  timeout = "15m"
   commands = [
     "sudo cat /etc/rancher/k3s/k3s.yaml"
   ]
