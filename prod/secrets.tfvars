@@ -13,4 +13,5 @@ sshKeyPublic = <<-EOT
 ${SSH_KEY_PUBLIC}
 EOT
 ghToken = "${GH_TOKEN}"
+newRelicIngestionLicenseKey="${NEW_RELIC_INGESTION_LICENSE_KEY}"
 ##

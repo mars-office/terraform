@@ -50,4 +50,8 @@ module "kubeconfig-github-secret" {
 module "cluster-config" {
   source = "../modules/cluster-config"
   kubeconfig = module.ssh-extract-kubeconfig.kubeconfig
+  newRelic = {
+    enabled = true
+    ingestionKey = var.newRelicIngestionLicenseKey
+  }
 }

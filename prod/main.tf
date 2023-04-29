@@ -51,4 +51,12 @@ module "kubeconfig-github-secret" {
 module "cluster-config" {
   source = "../modules/cluster-config"
   kubeconfig = module.ssh-extract-kubeconfig.kubeconfig
+  env = var.env
+  newRelic = {
+    enabled = true
+    ingestionKey = var.newRelicIngestionLicenseKey
+  }
+  prometheus = {
+    enabled = true
+  }
 }
