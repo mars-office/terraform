@@ -7,6 +7,10 @@ variable "env" {
   type = string
 }
 
+variable "nodeCount" {
+  type = number
+}
+
 variable "newRelic" {
   type = object({
     enabled = bool
@@ -19,6 +23,12 @@ variable "newRelic" {
 }
 
 variable "prometheus" {
+  type = object({
+    enabled = bool
+  })
+}
+
+variable "ingress" {
   type = object({
     enabled = bool
   })

@@ -51,11 +51,15 @@ module "cluster-config" {
   source = "../modules/cluster-config"
   kubeconfig = module.ssh-extract-kubeconfig.kubeconfig
   env = var.env
+  nodeCount = length(module.oci.vms)
   newRelic = {
     enabled = true
     ingestionKey = var.newRelicIngestionLicenseKey
   }
   prometheus = {
+    enabled = true
+  }
+  ingress = {
     enabled = true
   }
 }
