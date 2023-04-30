@@ -33,6 +33,6 @@ EOF
   count = var.newRelic.enabled ? 1 : 0
 
   depends_on = [
-    helm_release.prometheus[0]
+    helm_release.jaeger[0]
   ]
 }
