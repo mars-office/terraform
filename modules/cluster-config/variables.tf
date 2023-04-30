@@ -53,6 +53,16 @@ variable "jaeger" {
   })
 }
 
+variable "linkerd" {
+  type = object({
+    enabled = bool
+    viz = bool
+    jaeger = bool
+    adminPassword = string
+    runProxyAsRoot = bool
+  })
+}
+
 variable "kubernetesDashboard" {
   type = object({
     enabled = bool

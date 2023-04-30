@@ -17,5 +17,21 @@ controller:
 EOF
   ]
 
+  set {
+    name  = "controller.config.enable-opentracing"
+    value = var.linkerd.enabled && var.linkerd.jaeger ? "true" : "false"
+    type = "string"
+  }
+
+  set {
+    name  = "controller.config.zipkin-collector-host"
+    value = "collector.linkerd-jaeger:9411"
+  }
+
+  set {
+    name  = "controller.podAnnotations.linkerd\\.io/inject"
+    value = "enabled"
+  }
+
   count = var.ingress.enabled ? 1 : 0
 }

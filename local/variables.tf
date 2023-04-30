@@ -32,3 +32,8 @@ variable "prometheusPassword" {
   type = string
   sensitive = true
 }
+
+variable "linkerdPassword" {
+  type = string
+  sensitive = true
+}

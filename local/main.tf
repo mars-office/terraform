@@ -28,6 +28,13 @@ module "cluster-config" {
     enabled = true
     adminPassword = var.jaegerPassword
   }
+  linkerd = {
+    adminPassword = var.linkerdPassword
+    enabled = true
+    jaeger = true
+    viz = true
+    runProxyAsRoot = true
+  }
   kubernetesDashboard = {
     adminPassword = var.kubernetesDashboardPassword
     enabled = true
