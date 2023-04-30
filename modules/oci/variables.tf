@@ -56,3 +56,7 @@ variable "vms" {
     osImageId = string
   }))
 }
+
+variable "clusterDns" {
+  type = string
+}

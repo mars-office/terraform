@@ -18,6 +18,7 @@ data "cloudinit_config" "init_vm" {
       k3s_url = "https://${oci_core_instance.vm_primary[local.primaryMasterName].private_ip }:6443"
       master = "${each.value.master}"
       primary = "${each.value.primary}"
+      cluster_dns = ""
     })
   }
 }
@@ -36,6 +37,7 @@ data "cloudinit_config" "init_vm_primary" {
       k3s_url = ""
       master = "${each.value.master}"
       primary = "${each.value.primary}"
+      cluster_dns = var.clusterDns
     })
   }
 }

@@ -18,6 +18,7 @@ module "oci" {
   sshKeyPrivate = var.sshKeyPrivate
   sshKeyPublic = var.sshKeyPublic
   env = var.env
+  clusterDns = "${var.env}.marsoffice.com"
   vms = [
     {
       name = "k3smaster1"
@@ -51,6 +52,7 @@ module "cluster-config" {
   source = "../modules/cluster-config"
   kubeconfig = module.ssh-extract-kubeconfig.kubeconfig
   env = var.env
+  clusterDns = "${var.env}.marsoffice.com"
   nodeCount = length(module.oci.vms)
   newRelic = {
     enabled = true

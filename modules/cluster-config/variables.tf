@@ -7,6 +7,10 @@ variable "env" {
   type = string
 }
 
+variable "clusterDns" {
+  type = string
+}
+
 variable "nodeCount" {
   type = number
 }
