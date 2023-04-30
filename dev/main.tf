@@ -51,6 +51,12 @@ module "kubeconfig-github-secret" {
 module "cloudflare-dns-cluster" {
   source = "../modules/cloudflare-dns"
   cloudflareToken = var.cloudflareToken
+  zoneName = "marsconceptor.com"
+  records = [for vm in module.oci.vms : {
+    name = var.env
+    type = "A"
+    value = vm.public_ip
+  } if vm.primary == true]
 }
 
 module "cluster-config" {
