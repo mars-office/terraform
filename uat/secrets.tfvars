@@ -16,4 +16,8 @@ ghToken = "${GH_TOKEN}"
 newRelicIngestionLicenseKey="${NEW_RELIC_INGESTION_LICENSE_KEY}"
 cloudflareToken="${CLOUDFLARE_API_KEY}"
 letsEncryptEmail="${LETSENCRYPT_EMAIL}"
+kubeappsPassword="${KUBEAPPS_PASSWORD}"
+kubernetesDashboardPassword="${KUBERNETES_DASHBOARD_PASSWORD}"
+jaegerPassword="${JAEGER_PASSWORD}"
+prometheusPassword="${PROMETHEUS_PASSWORD}"
 ##

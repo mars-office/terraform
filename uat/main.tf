@@ -76,6 +76,21 @@ module "cloudflare-dns-clusterapps" {
       type = "A"
       value = vm.public_ip
     }],
+    [for vm in module.oci.vms : {
+      name = "prometheus.${var.env}"
+      type = "A"
+      value = vm.public_ip
+    }],
+    [for vm in module.oci.vms : {
+      name = "jaeger.${var.env}"
+      type = "A"
+      value = vm.public_ip
+    }],
+    [for vm in module.oci.vms : {
+      name = "linkerd.${var.env}"
+      type = "A"
+      value = vm.public_ip
+    }],
   )
 }
 
@@ -92,6 +107,7 @@ module "cluster-config" {
   }
   prometheus = {
     enabled = true
+    adminPassword = var.prometheusPassword
   }
   ingress = {
     enabled = true
@@ -99,6 +115,14 @@ module "cluster-config" {
   certManager = {
     enabled = true
     letsEncryptEmail = var.letsEncryptEmail
+  }
+  jaeger = {
+    enabled = true
+    adminPassword = var.jaegerPassword
+  }
+  kubernetesDashboard = {
+    adminPassword = var.kubernetesDashboardPassword
+    enabled = true
   }
 }
 

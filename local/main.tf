@@ -15,6 +15,7 @@ module "cluster-config" {
   }
   prometheus = {
     enabled = true
+    adminPassword = var.prometheusPassword
   }
   ingress = {
     enabled = true
@@ -22,5 +23,13 @@ module "cluster-config" {
   certManager = {
     enabled = false
     letsEncryptEmail = var.letsEncryptEmail
+  }
+  jaeger = {
+    enabled = true
+    adminPassword = var.jaegerPassword
+  }
+  kubernetesDashboard = {
+    adminPassword = var.kubernetesDashboardPassword
+    enabled = true
   }
 }

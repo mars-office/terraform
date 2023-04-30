@@ -62,3 +62,23 @@ variable "letsEncryptEmail" {
   type = string
   sensitive = true
 }
+
+variable "kubernetesDashboardPassword" {
+  type = string
+  sensitive = true
+}
+
+variable "kubeappsPassword" {
+  type = string
+  sensitive = true
+}
+
+variable "jaegerPassword" {
+  type = string
+  sensitive = true
+}
+
+variable "prometheusPassword" {
+  type = string
+  sensitive = true
+}

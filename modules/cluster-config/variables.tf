@@ -29,6 +29,7 @@ variable "newRelic" {
 variable "prometheus" {
   type = object({
     enabled = bool
+    adminPassword = string
   })
 }
 
@@ -42,5 +43,19 @@ variable "certManager" {
 variable "ingress" {
   type = object({
     enabled = bool
+  })
+}
+
+variable "jaeger" {
+  type = object({
+    enabled = bool
+    adminPassword = string
+  })
+}
+
+variable "kubernetesDashboard" {
+  type = object({
+    enabled = bool
+    adminPassword = string
   })
 }
