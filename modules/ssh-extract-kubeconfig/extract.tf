@@ -3,7 +3,7 @@ resource "ssh_sensitive_resource" "cat" {
   host         = var.ip
   user         = "ubuntu"
   private_key = var.sshKeyPrivate
-  retry_delay = "2s"
+  retry_delay = "30s"
   timeout = "15m"
   pre_commands = [
     "sleep 60"
