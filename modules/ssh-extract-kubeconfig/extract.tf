@@ -6,7 +6,7 @@ resource "ssh_sensitive_resource" "cat" {
   retry_delay = "2s"
   timeout = "15m"
   pre_commands = [
-    "sleep 120"
+    "sleep 60"
   ]
   commands = [
     "sudo cat /etc/rancher/k3s/k3s.yaml"
