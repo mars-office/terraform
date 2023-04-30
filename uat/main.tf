@@ -18,7 +18,7 @@ module "oci" {
   sshKeyPrivate = var.sshKeyPrivate
   sshKeyPublic = var.sshKeyPublic
   env = var.env
-  clusterDns = "${var.env}.marsoffice.com"
+  clusterDns = "${var.env}.marsconceptor.com"
   vms = [
     {
       name = "k3smaster1"
@@ -47,7 +47,7 @@ module "kubeconfig-github-secret" {
   ghToken = var.ghToken
   kubeconfig = module.ssh-extract-kubeconfig.kubeconfig_with_hostname
   env = var.env
-  clusterDns = "${var.env}.marsoffice.com"
+  clusterDns = "${var.env}.marsconceptor.com"
 }
 
 module "cloudflare-dns-cluster" {
@@ -78,7 +78,7 @@ module "cluster-config" {
   kubeconfig = module.ssh-extract-kubeconfig.kubeconfig
   env = var.env
   nodeCount = length(module.oci.vms)
-  clusterDns = "${var.env}.marsoffice.com"
+  clusterDns = "${var.env}.marsconceptor.com"
   newRelic = {
     enabled = true
     ingestionKey = var.newRelicIngestionLicenseKey
