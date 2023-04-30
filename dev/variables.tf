@@ -52,3 +52,8 @@ variable "newRelicIngestionLicenseKey" {
   type = string
   sensitive = true
 }
+
+variable "cloudflareToken" {
+  type = string
+  sensitive = true
+}
