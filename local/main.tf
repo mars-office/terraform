@@ -31,19 +31,19 @@ module "cluster-config" {
     letsEncryptEmail = var.letsEncryptEmail
   }
   jaeger = {
-    enabled = true
+    enabled = false
     adminPassword = var.jaegerPassword
   }
   linkerd = {
     adminPassword = var.linkerdPassword
     enabled = true
-    jaeger = true
-    viz = true
+    jaeger = false
+    viz = false
     runProxyAsRoot = true
   }
   kubernetesDashboard = {
     adminPassword = var.kubernetesDashboardPassword
-    enabled = true
+    enabled = false
   }
   kubeapps = {
     adminPassword = var.kubeappsPassword
