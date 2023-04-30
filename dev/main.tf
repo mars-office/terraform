@@ -56,7 +56,25 @@ module "cloudflare-dns-cluster" {
     name = var.env
     type = "A"
     value = vm.public_ip
-  } if vm.primary == true]
+  } if vm.master == true]
+}
+
+module "cloudflare-dns-clusterapps" {
+  source = "../modules/cloudflare-dns"
+  cloudflareToken = var.cloudflareToken
+  zoneName = "marsconceptor.com"
+  records = concat(
+    [for vm in module.oci.vms : {
+      name = "dashboard.${var.env}"
+      type = "A"
+      value = vm.public_ip
+    }],
+    [for vm in module.oci.vms : {
+      name = "kubeapps.${var.env}"
+      type = "A"
+      value = vm.public_ip
+    }],
+  )
 }
 
 module "cluster-config" {
@@ -83,9 +101,16 @@ module "cloudflare-dns-huna" {
   source = "../modules/cloudflare-dns"
   cloudflareToken = var.cloudflareToken
   zoneName = "huna2.com"
-  records = [for vm in module.oci.vms : {
+  records = concat([for vm in module.oci.vms : {
     name = var.env
     type = "A"
     value = vm.public_ip
-  }]
+  }],
+  [
+    {
+      name = "www.${var.env}"
+      type = "CNAME"
+      value = "${var.env}.huna2.com"
+    }
+  ])
 }
