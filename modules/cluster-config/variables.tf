@@ -32,6 +32,13 @@ variable "prometheus" {
   })
 }
 
+variable "certManager" {
+  type = object({
+    enabled = bool
+    letsEncryptEmail = string
+  })
+}
+
 variable "ingress" {
   type = object({
     enabled = bool

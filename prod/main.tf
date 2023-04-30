@@ -95,6 +95,10 @@ module "cluster-config" {
   ingress = {
     enabled = true
   }
+  certManager = {
+    enabled = true
+    letsEncryptEmail = var.letsEncryptEmail
+  }
 }
 
 

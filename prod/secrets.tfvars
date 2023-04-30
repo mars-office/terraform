@@ -15,4 +15,5 @@ EOT
 ghToken = "${GH_TOKEN}"
 newRelicIngestionLicenseKey="${NEW_RELIC_INGESTION_LICENSE_KEY}"
 cloudflareToken="${CLOUDFLARE_API_KEY}"
+letsEncryptEmail="${LETSENCRYPT_EMAIL}"
 ##

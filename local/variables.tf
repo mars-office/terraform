@@ -7,3 +7,8 @@ variable "newRelicIngestionLicenseKey" {
   type = string
   sensitive = true
 }
+
+variable "letsEncryptEmail" {
+  type = string
+  sensitive = true
+}
