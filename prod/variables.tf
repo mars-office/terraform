@@ -48,6 +48,16 @@ variable "ghToken" {
   sensitive = true
 }
 
+variable "ghUsername" {
+  type = string
+  sensitive = true
+}
+
+variable "ghEmail" {
+  type = string
+  sensitive = true
+}
+
 variable "newRelicIngestionLicenseKey" {
   type = string
   sensitive = true

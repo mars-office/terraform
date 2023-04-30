@@ -11,13 +11,20 @@ variable "clusterDns" {
   type = string
 }
 
-variable "ghToken" {
-  type = string
-  sensitive = true
+variable "github" {
+  type = object({
+    token = string
+    username = string
+    email = string
+  })
 }
 
 variable "nodeCount" {
   type = number
+}
+
+variable "appNamespaces" {
+  type = list(string)
 }
 
 variable "newRelic" {

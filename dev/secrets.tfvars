@@ -13,6 +13,8 @@ sshKeyPublic = <<-EOT
 ${SSH_KEY_PUBLIC}
 EOT
 ghToken = "${GH_TOKEN}"
+ghUsername="${GH_USERNAME}"
+ghEmail="${GH_EMAIL}"
 newRelicIngestionLicenseKey="${NEW_RELIC_INGESTION_LICENSE_KEY}"
 cloudflareToken="${CLOUDFLARE_API_KEY}"
 letsEncryptEmail="${LETSENCRYPT_EMAIL}"

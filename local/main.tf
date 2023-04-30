@@ -7,7 +7,12 @@ module "cluster-config" {
   source = "../modules/cluster-config"
   kubeconfig = file("~/.kube/config")
   env = var.env
-  ghToken = var.ghToken
+  appNamespaces = ["huna"]
+  github = {
+    username = var.ghUsername
+    email = var.ghEmail
+    token = var.ghToken
+  }
   clusterDns = "marsoffice.127.0.0.1.nip.io"
   nodeCount = 1
   newRelic = {
