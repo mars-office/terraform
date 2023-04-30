@@ -6,6 +6,7 @@ resource "helm_release" "prometheus-basic-auth-secret" {
   create_namespace = true
   namespace = "prometheus"
   timeout = 500
+  wait = true
 
   values = [<<EOF
 user: 'admin'
@@ -30,6 +31,7 @@ resource "helm_release" "prometheus" {
   create_namespace = false
   namespace = "prometheus"
   timeout = 500
+  wait = true
 
   values = [<<EOF
 server:

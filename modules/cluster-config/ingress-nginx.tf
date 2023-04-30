@@ -6,6 +6,7 @@ resource "helm_release" "ingress-nginx" {
   create_namespace = true
   namespace = "ingress-nginx"
   timeout = 500
+  wait = true
 
   values = [<<EOF
 controller:

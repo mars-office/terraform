@@ -85,7 +85,7 @@ resource "helm_release" "linkerd-crds" {
   create_namespace = true
   namespace        = "linkerd"
   timeout          = 500
-
+  wait = true
   values = [<<EOF
 
 EOF
@@ -107,7 +107,7 @@ resource "helm_release" "linkerd-control-plane" {
   create_namespace = false
   namespace        = "linkerd"
   timeout          = 500
-
+  wait = true
   set {
     name  = "identityTrustAnchorsPEM"
     value = tls_self_signed_cert.trustanchor_cert[0].cert_pem
@@ -156,7 +156,7 @@ resource "helm_release" "linkerd-basic-auth-secret" {
   create_namespace = true
   namespace        = "linkerd-viz"
   timeout          = 500
-
+  wait = true
   values = [<<EOF
 user: 'admin'
 password: '${var.linkerd.adminPassword}'
@@ -179,7 +179,7 @@ resource "helm_release" "linkerd-viz" {
   create_namespace = false
   namespace        = "linkerd-viz"
   timeout          = 500
-
+  wait = true
   set {
     name  = "prometheus.enabled"
     value = var.prometheus.enabled ? "false" : "true"
@@ -262,7 +262,7 @@ resource "helm_release" "linkerd-jaeger" {
   create_namespace = true
   namespace        = "linkerd-jaeger"
   timeout          = 500
-
+  wait = true
 
   values = [
 <<EOF

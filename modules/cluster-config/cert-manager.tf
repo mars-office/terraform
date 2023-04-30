@@ -6,7 +6,7 @@ resource "helm_release" "cert-manager" {
   create_namespace = true
   namespace = "cert-manager"
   timeout = 500
-
+  wait = true
   values = [<<EOF
 installCRDs: true
 EOF
@@ -27,7 +27,7 @@ resource "helm_release" "letsencrypt-cluster-issuer" {
   create_namespace = false
   namespace = "cert-manager"
   timeout = 500
-
+  wait = true
   values = [<<EOF
 clusterIssuers:
   - name: letsencrypt-prod

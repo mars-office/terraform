@@ -6,7 +6,7 @@ resource "helm_release" "jaeger-basic-auth-secret" {
   create_namespace = true
   namespace = "jaeger"
   timeout = 500
-
+  wait = true
   values = [<<EOF
 user: 'admin'
 password: '${var.jaeger.adminPassword}'
@@ -30,7 +30,7 @@ resource "helm_release" "jaeger" {
   create_namespace = false
   namespace = "jaeger"
   timeout = 500
-
+  wait = true
   values = [<<EOF
 provisionDataStore:
   cassandra: false

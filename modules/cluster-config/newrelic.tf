@@ -6,6 +6,7 @@ resource "helm_release" "newrelic" {
   create_namespace = true
   namespace = "newrelic"
   timeout = 500
+  wait = true
 
   values = [<<EOF
 logging:
