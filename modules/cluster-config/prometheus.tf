@@ -5,6 +5,7 @@ resource "helm_release" "prometheus" {
   version    = "21.1.1"
   create_namespace = true
   namespace = "prometheus"
+  timeout = 500
 
   values = [<<EOF
 global:
