@@ -3,6 +3,11 @@ variable "env" {
   default = "local"
 }
 
+variable "ghToken" {
+  type = string
+  sensitive = true
+}
+
 variable "newRelicIngestionLicenseKey" {
   type = string
   sensitive = true

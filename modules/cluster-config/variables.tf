@@ -11,6 +11,11 @@ variable "clusterDns" {
   type = string
 }
 
+variable "ghToken" {
+  type = string
+  sensitive = true
+}
+
 variable "nodeCount" {
   type = number
 }

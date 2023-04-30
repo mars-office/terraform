@@ -77,6 +77,7 @@ module "cluster-config" {
   kubeconfig = module.ssh-extract-kubeconfig.kubeconfig
   nodeCount = length(module.oci.vms)
   env = var.env
+  ghToken = var.ghToken
   clusterDns = "${var.env}.marsconceptor.com"
   newRelic = {
     enabled = true
