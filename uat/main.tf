@@ -65,33 +65,11 @@ module "cloudflare-dns-clusterapps" {
   source = "../modules/cloudflare-dns"
   cloudflareToken = var.cloudflareToken
   zoneName = "marsconceptor.com"
-  records = concat(
-    [for vm in module.oci.vms : {
-      name = "dashboard.${var.env}"
+  records = [for vm in module.oci.vms : {
+      name = "*.${var.env}"
       type = "A"
       value = vm.public_ip
-    }],
-    [for vm in module.oci.vms : {
-      name = "kubeapps.${var.env}"
-      type = "A"
-      value = vm.public_ip
-    }],
-    [for vm in module.oci.vms : {
-      name = "prometheus.${var.env}"
-      type = "A"
-      value = vm.public_ip
-    }],
-    [for vm in module.oci.vms : {
-      name = "jaeger.${var.env}"
-      type = "A"
-      value = vm.public_ip
-    }],
-    [for vm in module.oci.vms : {
-      name = "linkerd.${var.env}"
-      type = "A"
-      value = vm.public_ip
-    }],
-  )
+    }]
 }
 
 
