@@ -1,5 +1,5 @@
 resource "cloudflare_record" "record" {
-  for_each = tomap(var.records)
+  for_each = {for r in var.records : concat(r.name, r.type, r.value) => r}
   zone_id = data.cloudflare_zone.zone.id
   name    = each.value.name
   value   = each.value.value

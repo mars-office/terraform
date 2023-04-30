@@ -77,3 +77,16 @@ module "cluster-config" {
     enabled = true
   }
 }
+
+
+// APPS DNS
+module "cloudflare-dns-huna" {
+  source = "../modules/cloudflare-dns"
+  cloudflareToken = var.cloudflareToken
+  zoneName = "huna2.com"
+  records = [for vm in module.oci.vms : {
+    name = "@"
+    type = "A"
+    value = vm.public_ip
+  }]
+}
