@@ -6,3 +6,7 @@ variable "sshKeyPrivate" {
 variable "ip" {
   type = string
 }
+
+variable "clusterDns" {
+  type = string
+}

@@ -45,8 +45,9 @@ module "ssh-extract-kubeconfig" {
 module "kubeconfig-github-secret" {
   source = "../modules/kubeconfig-github-secret"
   ghToken = var.ghToken
-  kubeconfig = module.ssh-extract-kubeconfig.kubeconfig
+  kubeconfig = module.ssh-extract-kubeconfig.kubeconfig_with_hostname
   env = var.env
+  clusterDns = "${var.env}.marsoffice.com"
 }
 
 module "cloudflare-dns-cluster" {

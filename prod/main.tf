@@ -40,12 +40,13 @@ module "ssh-extract-kubeconfig" {
   source = "../modules/ssh-extract-kubeconfig"
   sshKeyPrivate = var.sshKeyPrivate
   ip = [for vm in module.oci.vms : vm.public_ip if vm.primary == true][0]
+  clusterDns = "${var.env}.marsoffice.com"
 }
 
 module "kubeconfig-github-secret" {
   source = "../modules/kubeconfig-github-secret"
   ghToken = var.ghToken
-  kubeconfig = module.ssh-extract-kubeconfig.kubeconfig
+  kubeconfig = module.ssh-extract-kubeconfig.kubeconfig_with_hostname
   env = var.env
 }
 
