@@ -1,9 +1,33 @@
+resource "helm_release" "prometheus-basic-auth-secret" {
+  name       = "prometheus-basic-auth-secret"
+  repository = "https://helm.sikalabs.io"
+  chart      = "basic-auth-secret"
+  version    = "1.0.0"
+  create_namespace = true
+  namespace = "prometheus"
+  timeout = 500
+
+  values = [<<EOF
+user: 'admin'
+password: '${var.prometheus.adminPassword}'
+EOF
+  ]
+
+  count = var.prometheus.enabled ? 1 : 0
+
+
+  depends_on = [
+    helm_release.letsencrypt-cluster-issuer[0]
+  ]
+}
+
+
 resource "helm_release" "prometheus" {
   name       = "prometheus"
   repository = "https://prometheus-community.github.io/helm-charts"
   chart      = "prometheus"
   version    = "21.1.2"
-  create_namespace = true
+  create_namespace = false
   namespace = "prometheus"
   timeout = 500
 
@@ -38,28 +62,6 @@ EOF
   count = var.prometheus.enabled ? 1 : 0
 
   depends_on = [
-    helm_release.letsencrypt-cluster-issuer[0]
-  ]
-}
-
-resource "helm_release" "prometheus-basic-auth-secret" {
-  name       = "prometheus-basic-auth-secret"
-  repository = "https://helm.sikalabs.io"
-  chart      = "basic-auth-secret"
-  version    = "1.0.0"
-  create_namespace = false
-  namespace = "prometheus"
-  timeout = 500
-
-  values = [<<EOF
-user: 'admin'
-password: '${var.prometheus.adminPassword}'
-EOF
-  ]
-
-  count = var.prometheus.enabled ? 1 : 0
-
-  depends_on = [
-    helm_release.prometheus[0]
+    helm_release.prometheus-basic-auth-secret[0]
   ]
 }
