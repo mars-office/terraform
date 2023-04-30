@@ -1,0 +1,14 @@
+name: 'Terraform Destroy'
+
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        type: environment
+
+jobs:
+  terraform_destroy:
+    uses: mars-office/.github/.github/workflows/terraform_destroy.yaml@main
+    with:
+      env: ${{ inputs.env }}
+    secrets: inherit
