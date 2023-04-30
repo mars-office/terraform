@@ -1,5 +1,5 @@
 resource "cloudflare_record" "record" {
-  for_each = toset(var.records)
+  for_each = tomap(var.records)
   zone_id = data.cloudflare_zone.zone.id
   name    = each.value.name
   value   = each.value.value
