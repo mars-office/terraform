@@ -13,7 +13,7 @@ module "cluster-config" {
     email = var.ghEmail
     token = var.ghToken
   }
-  clusterDns = "marsoffice.local"
+  clusterDns = "marsconceptor.local"
   nodeCount = 1
   newRelic = {
     enabled = false
@@ -43,10 +43,6 @@ module "cluster-config" {
   }
   kubernetesDashboard = {
     adminPassword = var.kubernetesDashboardPassword
-    enabled = false
-  }
-  kubeapps = {
-    adminPassword = var.kubeappsPassword
     enabled = false
   }
 }

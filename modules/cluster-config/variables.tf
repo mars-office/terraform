@@ -81,10 +81,3 @@ variable "kubernetesDashboard" {
     adminPassword = string
   })
 }
-
-variable "kubeapps" {
-  type = object({
-    enabled = bool
-    adminPassword = string
-  })
-}

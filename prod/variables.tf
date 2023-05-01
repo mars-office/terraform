@@ -78,11 +78,6 @@ variable "kubernetesDashboardPassword" {
   sensitive = true
 }
 
-variable "kubeappsPassword" {
-  type = string
-  sensitive = true
-}
-
 variable "jaegerPassword" {
   type = string
   sensitive = true
