@@ -36,9 +36,9 @@ resource "helm_release" "prometheus" {
   values = [<<EOF
 server:
   global:
-    scrape_interval: 10s
+    scrape_interval: 5m
     scrape_timeout: 10s
-    evaluation_interval: 10s
+    evaluation_interval: 30s
   ingress:
     enabled: true
     annotations:
