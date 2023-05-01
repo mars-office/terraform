@@ -22,6 +22,14 @@ EOF
   ]
 }
 
+locals {
+  remoteWriteNewRelic = var.newRelic.enabled == false ? "" : <<EOF
+  remoteWrite:
+    - url: https://metric-api.eu.newrelic.com/prometheus/v1/write?prometheus_server=prometheus-server-${var.env}
+      bearer_token: ${var.newRelic.ingestionKey}
+
+EOF
+}
 
 resource "helm_release" "prometheus" {
   name       = "prometheus"
@@ -35,6 +43,7 @@ resource "helm_release" "prometheus" {
 
   values = [<<EOF
 server:
+${local.remoteWriteNewRelic}
   global:
     scrape_interval: 5m
     scrape_timeout: 10s
@@ -58,7 +67,7 @@ server:
 alertmanager:
   enabled: false
 kube-state-metrics:
-  enabled: ${var.newRelic.enabled ? "false" : "true"}
+  enabled: true
 extraScrapeConfigs: |-
   - job_name: 'linkerd-controller'
     kubernetes_sd_configs:
@@ -142,6 +151,7 @@ extraScrapeConfigs: |-
       regex: __tmp_pod_label_(.+)
 EOF
   ]
+
 
   count = var.prometheus.enabled ? 1 : 0
 

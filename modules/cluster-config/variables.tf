@@ -32,10 +32,6 @@ variable "newRelic" {
     enabled = bool
     ingestionKey = string
   })
-  default = {
-    enabled = true
-    ingestionKey = null
-  }
 }
 
 variable "prometheus" {

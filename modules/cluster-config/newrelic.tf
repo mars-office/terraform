@@ -19,15 +19,13 @@ global:
   lowDataMode: true
 newrelic-infrastructure:
   privileged: true
+  ksm:
+    config:
+      selector: "app.kubernetes.io/name=kube-state-metrics"
 kube-state-metrics:
   enabled: false
 newrelic-prometheus-agent:
   enabled: false
-  lowDataMode: true
-  config:
-    kubernetes:
-      integrations_filter:
-        enabled: false
 EOF
   ]
 

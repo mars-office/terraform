@@ -16,7 +16,7 @@ module "cluster-config" {
   clusterDns = "marsconceptor.local"
   nodeCount = 1
   newRelic = {
-    enabled = false
+    enabled = true
     ingestionKey = var.newRelicIngestionLicenseKey
   }
   prometheus = {

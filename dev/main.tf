@@ -84,7 +84,7 @@ module "cluster-config" {
   clusterDns = "${var.env}.marsconceptor.com"
   nodeCount = length(module.oci.vms)
   newRelic = {
-    enabled = false
+    enabled = true
     ingestionKey = var.newRelicIngestionLicenseKey
   }
   prometheus = {
