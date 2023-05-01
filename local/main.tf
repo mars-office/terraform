@@ -13,7 +13,7 @@ module "cluster-config" {
     email = var.ghEmail
     token = var.ghToken
   }
-  clusterDns = "marsoffice.127.0.0.1.nip.io"
+  clusterDns = "marsoffice.local"
   nodeCount = 1
   newRelic = {
     enabled = false
