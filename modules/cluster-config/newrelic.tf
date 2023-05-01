@@ -20,9 +20,9 @@ global:
 newrelic-infrastructure:
   privileged: true
 kube-state-metrics:
-  enabled: true
+  enabled: false
 newrelic-prometheus-agent:
-  enabled: true
+  enabled: false
   lowDataMode: true
   config:
     kubernetes:
