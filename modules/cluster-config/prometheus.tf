@@ -49,9 +49,9 @@ resource "helm_release" "prometheus" {
 server:
 ${local.remoteWriteNewRelic}
   global:
-    scrape_interval: 15m
+    scrape_interval: 1m
     scrape_timeout: 10s
-    evaluation_interval: 30s
+    evaluation_interval: 10s
   ingress:
     enabled: true
     annotations:
