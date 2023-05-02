@@ -23,10 +23,6 @@ variable "nodeCount" {
   type = number
 }
 
-variable "appNamespaces" {
-  type = list(string)
-}
-
 variable "newRelic" {
   type = object({
     enabled = bool

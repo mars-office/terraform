@@ -77,7 +77,6 @@ module "cluster-config" {
   kubeconfig = module.ssh-extract-kubeconfig.kubeconfig
   nodeCount = length(module.oci.vms)
   env = var.env
-  appNamespaces = ["huna"]
   github = {
     username = var.ghUsername
     email = var.ghEmail

@@ -7,7 +7,6 @@ module "cluster-config" {
   source = "../modules/cluster-config"
   kubeconfig = file("~/.kube/config")
   env = var.env
-  appNamespaces = ["huna"]
   github = {
     username = var.ghUsername
     email = var.ghEmail
