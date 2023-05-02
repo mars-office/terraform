@@ -101,7 +101,7 @@ resource "kubernetes_service_account_v1" "kubeapps-operator-sa" {
   count = var.kubeapps.enabled ? 1 : 0
 }
 
-resource "kubernetes_cluster_role_binding_v1" "kubernetes-operator-sa-cluster-admin-binding" {
+resource "kubernetes_cluster_role_binding_v1" "kubeapps-operator-sa-cluster-admin-binding" {
   metadata {
     name = "kubernetes-operator-sa-cluster-admin-binding"
   }
@@ -112,7 +112,7 @@ resource "kubernetes_cluster_role_binding_v1" "kubernetes-operator-sa-cluster-ad
   }
   subject {
     kind = "ServiceAccount"
-    namespace = "kubeapps"
+    namespace = "default"
     name = kubernetes_service_account_v1.kubeapps-operator-sa[0].metadata[0].name
   }
   count = var.kubeapps.enabled ? 1 : 0
