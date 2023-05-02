@@ -27,6 +27,10 @@ locals {
   remoteWrite:
     - url: https://metric-api.eu.newrelic.com/prometheus/v1/write?prometheus_server=prometheus-server-${var.env}
       bearer_token: ${var.newRelic.ingestionKey}
+      write_relabel_configs:
+        - source_labels: [__name__]
+          regex: "node_disk_(.*)|node_memory_(.*)|node_cpu_(.*)|node_filesystem_(.*)|node_network_(.*)|node_procs_(.*)"
+          action: keep
 
 EOF
 }
