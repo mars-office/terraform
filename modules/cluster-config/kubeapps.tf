@@ -103,7 +103,7 @@ resource "kubernetes_service_account_v1" "kubeapps-operator-sa" {
 
 resource "kubernetes_cluster_role_binding_v1" "kubeapps-operator-sa-cluster-admin-binding" {
   metadata {
-    name = "kubernetes-operator-sa-cluster-admin-binding"
+    name = "kubeapps-operator-sa-cluster-admin-binding"
   }
   role_ref {
     api_group = "rbac.authorization.k8s.io"
@@ -118,7 +118,7 @@ resource "kubernetes_cluster_role_binding_v1" "kubeapps-operator-sa-cluster-admi
   count = var.kubeapps.enabled ? 1 : 0
 }
 
-resource "kubernetes_secret_v1" "kubernetes-operator-sa-token" {
+resource "kubernetes_secret_v1" "kubeapps-operator-sa-token" {
   metadata {
     namespace = "default"
     name = "kubeapps-operator-token"
