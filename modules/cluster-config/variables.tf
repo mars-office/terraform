@@ -41,6 +41,12 @@ variable "prometheus" {
   })
 }
 
+variable "kubeapps" {
+  type = object({
+    enabled = bool
+  })
+}
+
 variable "certManager" {
   type = object({
     enabled = bool
