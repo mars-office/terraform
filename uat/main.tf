@@ -41,6 +41,8 @@ module "ssh-extract-kubeconfig" {
   sshKeyPrivate = var.sshKeyPrivate
   ip = [for vm in module.oci.vms : vm.public_ip if vm.primary == true][0]
   clusterDns = "${var.env}.marsconceptor.com"
+
+  depends_on = [ module.oci ]
 }
 
 module "kubeconfig-github-secret" {
