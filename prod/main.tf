@@ -27,7 +27,7 @@ module "oci" {
       cpus = 4
       ssdSize = 200
       osImageId = "ocid1.image.oc1.eu-frankfurt-1.aaaaaaaa4vff5misacsoq2khjgx5qtqtar6gcga2evkqiioorgllxvgksroq" // Canonical Ubuntu 22.04 minimal aarch64
-      availabilityDomain = "BzCu:EU-FRANKFURT-1-AD-1"
+      availabilityDomain = "gaep:EU-FRANKFURT-1-AD-1"
       faultDomain = null
       master = true
       primary = true
