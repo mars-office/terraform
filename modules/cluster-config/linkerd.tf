@@ -245,6 +245,10 @@ EOF
         }
       }
     }
+    tls {
+      hosts = ["linkerd.${var.clusterDns}"]
+      secret_name = "linkerd-ingress-tls"
+    }
   }
 
   count = var.linkerd.enabled && var.linkerd.viz ? 1 : 0
