@@ -27,7 +27,7 @@ global:
   cluster: ${var.env}
   lowDataMode: true
 newrelic-infrastructure:
-  enabled: false
+  enabled: true
   common:
     config:
       interval: 40s

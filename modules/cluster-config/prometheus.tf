@@ -23,7 +23,7 @@ EOF
 }
 
 locals {
-  remoteWriteNewRelic = var.newRelic.enabled == false ? "" : <<EOF
+  remoteWriteNewRelic = var.promethes.remoteWrite == false || var.newRelic.enabled == false ? "" : <<EOF
   remoteWrite:
     - url: https://metric-api.eu.newrelic.com/prometheus/v1/write?prometheus_server=prometheus-server-${var.env}
       bearer_token: ${var.newRelic.ingestionKey}

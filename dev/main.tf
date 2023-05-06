@@ -91,6 +91,7 @@ module "cluster-config" {
   prometheus = {
     enabled = true
     adminPassword = var.prometheusPassword
+    remoteWrite = false
   }
   ingress = {
     enabled = true

@@ -34,6 +34,7 @@ variable "prometheus" {
   type = object({
     enabled = bool
     adminPassword = string
+    remoteWrite = bool
   })
 }
 
