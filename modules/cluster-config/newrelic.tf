@@ -27,6 +27,9 @@ global:
   cluster: ${var.env}
   lowDataMode: true
 newrelic-infrastructure:
+  common:
+    config:
+      interval: 60s
   privileged: true
   controlPlane:
     resources:
