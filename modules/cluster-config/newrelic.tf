@@ -29,7 +29,7 @@ global:
 newrelic-infrastructure:
   common:
     config:
-      interval: 60s
+      interval: 40s
   privileged: true
   controlPlane:
     resources:
