@@ -131,11 +131,9 @@ module "cloudflare-dns-huna" {
     type = "A"
     value = vm.public_ip
   }],
-  [
-    {
-      name = "www.${var.env}"
-      type = "CNAME"
-      value = "huna2.com"
-    }
-  ])
+  [for vm in module.oci.vms : {
+    name = "*"
+    type = "A"
+    value = vm.public_ip
+  }])
 }
