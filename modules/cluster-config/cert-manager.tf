@@ -5,7 +5,7 @@ resource "helm_release" "cert-manager" {
   version    = "1.11.1"
   create_namespace = true
   namespace = "cert-manager"
-  timeout = 500
+  timeout = 1500
   wait = true
   values = [<<EOF
 installCRDs: true
@@ -26,7 +26,7 @@ resource "helm_release" "letsencrypt-cluster-issuer" {
   version    = "0.2.5"
   create_namespace = false
   namespace = "cert-manager"
-  timeout = 500
+  timeout = 1500
   wait = true
   values = [<<EOF
 clusterIssuers:

@@ -5,7 +5,7 @@ resource "helm_release" "jaeger-basic-auth-secret" {
   version    = "1.0.0"
   create_namespace = true
   namespace = "jaeger"
-  timeout = 500
+  timeout = 1500
   wait = true
   values = [<<EOF
 user: 'admin'
@@ -29,7 +29,7 @@ resource "helm_release" "jaeger" {
   version    = "0.69.1"
   create_namespace = false
   namespace = "jaeger"
-  timeout = 500
+  timeout = 1500
   wait = true
   values = [<<EOF
 provisionDataStore:
