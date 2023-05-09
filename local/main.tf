@@ -12,7 +12,7 @@ module "cluster-config" {
     email = var.ghEmail
     token = var.ghToken
   }
-  clusterDns = "marsconceptor.local"
+  clusterDns = "local.marsconceptor.com"
   nodeCount = 1
   newRelic = {
     enabled = false
