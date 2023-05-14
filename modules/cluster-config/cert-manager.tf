@@ -52,6 +52,9 @@ clusterIssuers:
           - http01:
               ingress:
                 class: nginx
+  - name: selfsigned
+    spec:
+      selfSigned: {}
 EOF
   ]
 
