@@ -9,7 +9,7 @@ resource "helm_release" "kyverno" {
   wait = true
 
   values = [<<EOF
-
+replicaCount: 1
 EOF
   ]
 
@@ -18,4 +18,24 @@ EOF
   ]
 
   count = var.kyverno.enabled ? 1 : 0
+}
+
+resource "kubernetes_cluster_role_binding" "kyverno-cluster-admin-role-binding" {
+  metadata {
+    name = "kyverno-cluster-admin-role-binding"
+  }
+  role_ref {
+    api_group = "rbac.authorization.k8s.io"
+    kind = "ClusterRole"
+    name = "cluster-admin"
+  }
+  subject {
+    kind = "ServiceAccount"
+    namespace = "kyverno"
+    name = "kyverno"
+  }
+  count = var.kyverno.enabled ? 1 : 0
+  depends_on = [
+    helm_release.kyverno[0]
+  ]
 }
