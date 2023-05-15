@@ -119,6 +119,9 @@ module "cluster-config" {
   kubeapps = {
     enabled = true
   }
+  kyverno = {
+    enabled = true
+  }
 }
 
 

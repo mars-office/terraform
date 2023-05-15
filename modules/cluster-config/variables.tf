@@ -57,6 +57,12 @@ variable "ingress" {
   })
 }
 
+variable "kyverno" {
+  type = object({
+    enabled = bool
+  })
+}
+
 variable "jaeger" {
   type = object({
     enabled = bool
