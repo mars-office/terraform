@@ -32,7 +32,7 @@ resource "kubernetes_cluster_role_binding" "kyverno-cluster-admin-role-binding" 
   subject {
     kind = "ServiceAccount"
     namespace = "kyverno"
-    name = "kyverno"
+    name = "kyverno-background-controller"
   }
   count = var.kyverno.enabled ? 1 : 0
   depends_on = [
