@@ -9,7 +9,7 @@ resource "helm_release" "gatekeeper" {
   wait = true
 
   values = [<<EOF
-
+replicas: 1
 EOF
   ]
 
