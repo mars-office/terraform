@@ -120,8 +120,8 @@ module "cluster-config" {
   kubeapps = {
     enabled = true
   }
-  kyverno = {
-    enabled = false
+  gatekeeper = {
+    enabled = true
   }
 }
 

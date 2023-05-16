@@ -57,7 +57,7 @@ variable "ingress" {
   })
 }
 
-variable "kyverno" {
+variable "gatekeeper" {
   type = object({
     enabled = bool
   })
