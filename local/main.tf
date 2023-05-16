@@ -49,6 +49,6 @@ module "cluster-config" {
     enabled = false
   }
   kyverno = {
-    enabled = true
+    enabled = false
   }
 }
