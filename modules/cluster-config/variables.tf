@@ -48,6 +48,7 @@ variable "certManager" {
   type = object({
     enabled = bool
     letsEncryptEmail = string
+    issuer = string
   })
 }
 

@@ -100,6 +100,7 @@ module "cluster-config" {
   certManager = {
     enabled = true
     letsEncryptEmail = var.letsEncryptEmail
+    issuer = "letsencrypt-prod"
   }
   jaeger = {
     enabled = true
