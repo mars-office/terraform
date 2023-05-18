@@ -27,7 +27,7 @@ module "cluster-config" {
     enabled = true
   }
   certManager = {
-    enabled = true
+    enabled = false
     letsEncryptEmail = var.letsEncryptEmail
     issuer = "self-signed"
   }
