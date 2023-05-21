@@ -52,7 +52,7 @@ clusterIssuers:
           - http01:
               ingress:
                 class: nginx
-  - name: self-signed
+  - name: selfsigned
     spec:
       selfSigned: {}
 EOF
@@ -62,5 +62,46 @@ EOF
 
   depends_on = [
     helm_release.cert-manager[0]
+  ]
+}
+
+
+resource "helm_release" "root-ca" {
+  name       = "root-ca"
+  chart      = "${path.module}/charts/root-ca"
+  create_namespace = false
+  namespace = "cert-manager"
+  timeout = 1500
+  wait = true
+
+  count = var.certManager.enabled ? 1 : 0
+
+  depends_on = [
+    helm_release.letsencrypt-cluster-issuer[0]
+  ]
+}
+
+resource "helm_release" "root-ca-cert-manager-issuers" {
+  name       = "root-ca-cert-manager-issuers"
+  repository = "https://charts.adfinis.com"
+  chart      = "cert-manager-issuers"
+  version    = "0.2.5"
+  create_namespace = false
+  namespace = "cert-manager"
+  timeout = 1500
+  wait = true
+  values = [<<EOF
+clusterIssuers:
+  - name: root-ca
+    spec:
+      ca:
+        secretName: root-ca
+EOF
+  ]
+
+  count = var.certManager.enabled ? 1 : 0
+
+  depends_on = [
+    helm_release.root-ca[0]
   ]
 }
