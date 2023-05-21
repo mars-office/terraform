@@ -70,7 +70,7 @@ resource "helm_release" "root-ca" {
   name       = "root-ca"
   chart      = "${path.module}/charts/root-ca"
   create_namespace = false
-  namespace = "cert-manager"
+  namespace = "default"
   timeout = 1500
   wait = true
 
