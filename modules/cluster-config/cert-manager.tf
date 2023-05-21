@@ -52,7 +52,7 @@ clusterIssuers:
           - http01:
               ingress:
                 class: nginx
-  - name: selfsigned
+  - name: self-signed
     spec:
       selfSigned: {}
 EOF
@@ -70,7 +70,7 @@ resource "helm_release" "root-ca" {
   name       = "root-ca"
   chart      = "${path.module}/charts/root-ca"
   create_namespace = false
-  namespace = "default"
+  namespace = "cert-manager"
   timeout = 1500
   wait = true
 
