@@ -27,7 +27,7 @@ resource "helm_release" "vdi" {
   chart      = "oci://ghcr.io/mars-office/vdi"
   version    = "0.0.20"
   repository_username = "mars-office"
-  repository_password = var.vdis.githubToken
+  repository_password = var.vdi.githubToken
   create_namespace = true
   namespace = "vdis"
   timeout = 1500
