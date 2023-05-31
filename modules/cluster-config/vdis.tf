@@ -22,7 +22,7 @@ EOF
 }
 
 resource "helm_release" "vdi" {
-  for_each = toset(var.vdi.enabled ? var.vdi.vdis : [])
+  for_each = var.vdi.enabled ?  {for i,v in var.vdi.vdis:  i => v} : {}
   name       = "vdi-${each.value.name}"
   chart      = "oci://ghcr.io/mars-office/vdi"
   version    = "0.0.20"
