@@ -124,7 +124,8 @@ module "cluster-config" {
   }
 
   vdi = {
-    enabled = false
+    enabled = true
+    githubToken = var.ghToken
     vdis = [
       {
         name = "alin"
