@@ -87,3 +87,14 @@ variable "kubernetesDashboard" {
     adminPassword = string
   })
 }
+
+variable "vdi" {
+  type = object({
+    enabled = bool
+    githubToken = string
+    vdis = list(object({
+      name = string
+      password = string
+    }))
+  })
+}

@@ -92,3 +92,8 @@ variable "linkerdPassword" {
   type = string
   sensitive = true
 }
+
+variable "alinVdiPassword" {
+  type = string
+  sensitive = true
+}

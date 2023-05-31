@@ -124,6 +124,11 @@ module "cluster-config" {
   gatekeeper = {
     enabled = true
   }
+
+  vdi = {
+    enabled = false
+    vdis = []
+  }
 }
 
 
