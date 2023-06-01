@@ -19,6 +19,10 @@ EOF
   ]
 
   count = var.vdi.enabled ? 1 : 0
+
+  depends_on = [
+    helm_release.linkerd-control-plane[0]
+  ]
 }
 
 resource "helm_release" "vdi" {
