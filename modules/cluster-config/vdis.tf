@@ -25,7 +25,7 @@ resource "helm_release" "vdi" {
   for_each = var.vdi.enabled ?  {for i,v in var.vdi.vdis:  i => v} : {}
   name       = "vdi-${each.value.name}"
   chart      = "oci://ghcr.io/mars-office/vdi"
-  version    = "0.0.20"
+  version    = var.vdi.version
   repository_username = "mars-office"
   repository_password = var.vdi.githubToken
   create_namespace = true
@@ -38,6 +38,10 @@ vncPassword: ${each.value.password}
 
 imagePullSecrets:
   - name: regcred
+
+persistence:
+  workspace:
+    size: ${each.value.persistence.workspace.size}
 
 ingress:
   enabled: true

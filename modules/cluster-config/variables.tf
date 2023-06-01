@@ -91,10 +91,16 @@ variable "kubernetesDashboard" {
 variable "vdi" {
   type = object({
     enabled = bool
+    version = string
     githubToken = string
     vdis = list(object({
       name = string
       password = string
+      persistence = object({
+        workspace = object({
+          size = string
+        })
+      })
     }))
   })
 }
