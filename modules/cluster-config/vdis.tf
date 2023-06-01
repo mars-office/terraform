@@ -39,7 +39,7 @@ resource "helm_release" "vdi" {
 
   values = [<<EOF
 vncPassword: ${each.value.password}
-
+user: ${each.value.name}
 imagePullSecrets:
   - name: regcred
 
