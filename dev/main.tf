@@ -128,18 +128,18 @@ module "cluster-config" {
     version = "0.0.58"
     githubToken = var.ghToken
     vdis = [
-      {
-        name = "alin"
-        password = var.alinVdiPassword
-        persistence = {
-          workspace = {
-            size = "10Gi"
-          }
-          tmp = {
-            size = "1Gi"
-          }
-        }
-      }
+      # {
+      #   name = "alin"
+      #   password = var.alinVdiPassword
+      #   persistence = {
+      #     workspace = {
+      #       size = "10Gi"
+      #     }
+      #     tmp = {
+      #       size = "1Gi"
+      #     }
+      #   }
+      # }
     ]
   }
 }
