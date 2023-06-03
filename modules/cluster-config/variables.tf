@@ -100,6 +100,9 @@ variable "vdi" {
         workspace = object({
           size = string
         })
+        tmp = object({
+          size = string
+        })
       })
     }))
   })

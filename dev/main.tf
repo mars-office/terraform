@@ -125,7 +125,7 @@ module "cluster-config" {
 
   vdi = {
     enabled = true
-    version = "0.0.57"
+    version = "0.0.58"
     githubToken = var.ghToken
     vdis = [
       {
@@ -134,6 +134,9 @@ module "cluster-config" {
         persistence = {
           workspace = {
             size = "10Gi"
+          }
+          tmp = {
+            size = "1Gi"
           }
         }
       }

@@ -46,7 +46,8 @@ imagePullSecrets:
 persistence:
   workspace:
     size: ${each.value.persistence.workspace.size}
-
+  tmp:
+    size: ${each.value.persistence.tmp.size}
 ingress:
   enabled: true
   annotations:

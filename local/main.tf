@@ -57,15 +57,6 @@ module "cluster-config" {
     githubToken = var.ghToken
     version = "0.0.0"
     vdis = [
-      {
-        name = "test"
-        password = var.testVdiPassword
-        persistence = {
-          workspace = {
-            size = "1Gi"
-          }
-        }
-      }
     ]
   }
 }
