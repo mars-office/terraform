@@ -55,7 +55,7 @@ module "cluster-config" {
   vdi = {
     enabled = false
     githubToken = var.ghToken
-    version = "0.0.49"
+    version = "0.0.50"
     vdis = [
       {
         name = "test"
