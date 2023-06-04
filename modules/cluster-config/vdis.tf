@@ -56,6 +56,8 @@ ingress:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
     nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      proxy_set_header Authorization $http_authorization;
   hosts:
     - host: ${each.value.name}.vdi.${var.clusterDns}
       paths:
