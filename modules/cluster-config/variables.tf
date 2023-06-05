@@ -107,3 +107,9 @@ variable "vdi" {
     }))
   })
 }
+
+variable "keda" {
+  type = object({
+    enabled = bool
+  })
+}

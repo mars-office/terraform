@@ -59,4 +59,7 @@ module "cluster-config" {
     vdis = [
     ]
   }
+  keda = {
+    enabled = false
+  }
 }

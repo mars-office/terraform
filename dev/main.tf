@@ -142,6 +142,9 @@ module "cluster-config" {
       }
     ]
   }
+  keda = {
+    enabled = true
+  }
 }
 
 

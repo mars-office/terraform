@@ -130,6 +130,9 @@ module "cluster-config" {
     githubToken = var.ghToken
     vdis = []
   }
+  keda = {
+    enabled = true
+  }
 }
 
 
