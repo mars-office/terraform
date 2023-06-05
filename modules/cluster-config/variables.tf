@@ -113,3 +113,9 @@ variable "keda" {
     enabled = bool
   })
 }
+
+variable "telepresence" {
+  type = object({
+    enabled = bool
+  })
+}

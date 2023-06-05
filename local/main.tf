@@ -62,4 +62,7 @@ module "cluster-config" {
   keda = {
     enabled = false
   }
+  telepresence = {
+    enabled = true
+  }
 }
