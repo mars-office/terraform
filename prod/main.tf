@@ -118,7 +118,7 @@ module "cluster-config" {
     enabled = true
   }
   kubeapps = {
-    enabled = true
+    enabled = false
   }
   gatekeeper = {
     enabled = true
