@@ -21,7 +21,7 @@ module "oci" {
   clusterDns = "${var.env}.marsconceptor.com"
   vms = [
     {
-      name = "devk3smaster1"
+      name = "k3smaster1"
       shape = "VM.Standard.A1.Flex"
       ram = 24
       cpus = 4
