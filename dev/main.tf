@@ -124,22 +124,10 @@ module "cluster-config" {
   }
 
   vdi = {
-    enabled = true
-    version = "0.0.65"
+    enabled = false
+    version = "0.0.0"
     githubToken = var.ghToken
     vdis = [
-      {
-        name = "alin"
-        password = var.alinVdiPassword
-        persistence = {
-          workspace = {
-            size = "10Gi"
-          }
-          tmp = {
-            size = "1Gi"
-          }
-        }
-      }
     ]
   }
   keda = {
