@@ -88,7 +88,7 @@ resource "oci_core_instance" "vm_primary" {
       "provisioner" = "terraform"
       "env"         = var.env
     }
-    hostname_label = "${each.key}${var.env}"
+    hostname_label = "${each.key}"
     nsg_ids        = [oci_core_network_security_group.nsg.id]
     subnet_id      = oci_core_subnet.k3s_subnet.id
   }
