@@ -258,6 +258,15 @@ EOF
   ]
 }
 
+locals {
+  newRelicOtlpConfig = <<EOF
+      otlp:
+        endpoint: https://otlp.eu01.nr-data.net
+        headers:
+          api-key: ${var.newRelic.ingestionKey}
+EOF
+}
+
 resource "helm_release" "linkerd-jaeger" {
   name             = "linkerd-jaeger"
   repository       = "https://helm.linkerd.io/stable"
@@ -293,6 +302,7 @@ collector:
     extensions:
       health_check:
     exporters:
+${var.newRelic.enabled ? local.newRelicOtlpConfig : ""}
       jaeger:
         endpoint: ${var.jaeger.enabled ? "jaeger-collector.jaeger:14250" : "collector.linkerd-jaeger:14250"}
         tls:
