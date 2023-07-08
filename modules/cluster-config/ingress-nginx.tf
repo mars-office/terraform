@@ -26,7 +26,7 @@ EOF
 
   set {
     name  = "controller.config.zipkin-collector-host"
-    value = "collector.linkerd-jaeger:9411"
+    value = "collector.linkerd-jaeger"
   }
 
   set {
