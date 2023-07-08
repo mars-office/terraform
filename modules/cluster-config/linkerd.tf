@@ -261,7 +261,7 @@ EOF
 locals {
   newRelicOtlpConfig = <<EOF
       otlp:
-        endpoint: https://otlp.eu01.nr-data.net
+        endpoint: https://otlp.eu01.nr-data.net:4318
         headers:
           api-key: ${var.newRelic.ingestionKey}
 EOF
