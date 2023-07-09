@@ -262,10 +262,8 @@ locals {
   newRelicOtlpConfig = <<EOF
       otlp:
         endpoint: otlp.eu01.nr-data.net:4317
-        tls:
-          insecure: true
         headers:
-          api-key: ${var.newRelic.ingestionKey}
+          "api-key": ${var.newRelic.ingestionKey}
 EOF
 }
 
@@ -315,7 +313,7 @@ ${var.newRelic.enabled ? local.newRelicOtlpConfig : ""}
         traces:
           receivers: [otlp,opencensus,zipkin,jaeger]
           processors: [batch]
-          exporters: [jaeger]
+          exporters: ${var.newRelic.enabled ? "[jaeger,otlp]" : "[jaeger]"}
 EOF
   ]
 
