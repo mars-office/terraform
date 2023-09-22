@@ -29,8 +29,8 @@ jobs:
     secrets: inherit
   snyk_iac_terraform:
     uses: mars-office/.github/.github/workflows/snyk_iac_terraform.yaml@main
-      with:
-        folder: prod
+    with:
+      folder: prod
     permissions:
       contents: read
       security-events: write
