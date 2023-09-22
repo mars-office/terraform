@@ -38,3 +38,14 @@ jobs:
       packages: read
     secrets: inherit
     needs: []
+  snyk_iac_tfplan:
+    uses: mars-office/.github/.github/workflows/snyk_iac_tfplan.yaml@main
+    with:
+      folder: prod
+    permissions:
+      contents: read
+      security-events: write
+      actions: read
+      packages: read
+    secrets: inherit
+    needs: [terraform]
