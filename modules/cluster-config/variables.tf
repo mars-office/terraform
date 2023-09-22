@@ -88,26 +88,6 @@ variable "kubernetesDashboard" {
   })
 }
 
-variable "vdi" {
-  type = object({
-    enabled = bool
-    version = string
-    githubToken = string
-    vdis = list(object({
-      name = string
-      password = string
-      persistence = object({
-        workspace = object({
-          size = string
-        })
-        tmp = object({
-          size = string
-        })
-      })
-    }))
-  })
-}
-
 variable "keda" {
   type = object({
     enabled = bool

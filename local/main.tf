@@ -52,13 +52,6 @@ module "cluster-config" {
   gatekeeper = {
     enabled = true
   }
-  vdi = {
-    enabled = false
-    githubToken = var.ghToken
-    version = "0.0.0"
-    vdis = [
-    ]
-  }
   keda = {
     enabled = false
   }
