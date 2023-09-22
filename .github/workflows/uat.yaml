@@ -27,25 +27,3 @@ jobs:
     with:
       env: uat
     secrets: inherit
-  snyk_iac_terraform:
-    uses: mars-office/.github/.github/workflows/snyk_iac_terraform.yaml@main
-    with:
-      folder: uat
-    permissions:
-      contents: read
-      security-events: write
-      actions: read
-      packages: read
-    secrets: inherit
-    needs: []
-  snyk_iac_tfplan:
-    uses: mars-office/.github/.github/workflows/snyk_iac_tfplan.yaml@main
-    with:
-      folder: uat
-    permissions:
-      contents: read
-      security-events: write
-      actions: read
-      packages: read
-    secrets: inherit
-    needs: [terraform]
