@@ -19,7 +19,7 @@ module "cluster-config" {
     ingestionKey = var.newRelicIngestionLicenseKey
   }
   prometheus = {
-    enabled = true
+    enabled = false
     adminPassword = var.prometheusPassword
     remoteWrite = false
   }
@@ -44,7 +44,7 @@ module "cluster-config" {
   }
   kubernetesDashboard = {
     adminPassword = var.kubernetesDashboardPassword
-    enabled = true
+    enabled = false
   }
   kubeapps = {
     enabled = false
