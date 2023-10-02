@@ -22,6 +22,11 @@ on:
 jobs:
   terraform:
     permissions:
+      security-events: write
+      actions: read
+      contents: read
+      packages: write
+      id-token: write
       pull-requests: write
     uses: mars-office/.github/.github/workflows/terraform.yaml@main
     with:
