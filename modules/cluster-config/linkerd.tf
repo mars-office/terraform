@@ -136,6 +136,12 @@ proxyInit:
       request: 1m
     memory:
       request: 1Mi
+proxy:
+  resources:
+    cpu:
+      request: 1m
+    memory:
+      request: 1Mi
 EOF
   ]
 
