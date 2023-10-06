@@ -91,7 +91,7 @@ module "cluster-config" {
     ingestionKey = var.newRelicIngestionLicenseKey
   }
   prometheus = {
-    enabled = false
+    enabled = true
     adminPassword = var.prometheusPassword
     remoteWrite = false
   }

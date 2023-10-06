@@ -124,7 +124,7 @@ module "cluster-config" {
     enabled = true
   }
   keda = {
-    enabled = true
+    enabled = false
   }
   telepresence = {
     enabled = false
