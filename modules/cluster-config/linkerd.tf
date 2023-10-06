@@ -81,7 +81,7 @@ resource "helm_release" "linkerd-crds" {
   name             = "linkerd-crds"
   repository       = "https://helm.linkerd.io/stable"
   chart            = "linkerd-crds"
-  version          = "1.6.1"
+  version          = "1.8.0"
   create_namespace = true
   namespace        = "linkerd"
   timeout          = 500
@@ -103,7 +103,7 @@ resource "helm_release" "linkerd-control-plane" {
   name             = "linkerd-control-plane"
   repository       = "https://helm.linkerd.io/stable"
   chart            = "linkerd-control-plane"
-  version          = "1.12.2"
+  version          = "1.16.2"
   create_namespace = false
   namespace        = "linkerd"
   timeout          = 500
@@ -181,7 +181,7 @@ resource "helm_release" "linkerd-viz" {
   name             = "linkerd-viz"
   repository       = "https://helm.linkerd.io/stable"
   chart            = "linkerd-viz"
-  version          = "30.8.2"
+  version          = "30.12.2"
   create_namespace = false
   namespace        = "linkerd-viz"
   timeout          = 500
@@ -277,7 +277,7 @@ resource "helm_release" "linkerd-jaeger" {
   name             = "linkerd-jaeger"
   repository       = "https://helm.linkerd.io/stable"
   chart            = "linkerd-jaeger"
-  version          = "30.8.2"
+  version          = "30.12.2"
   create_namespace = true
   namespace        = "linkerd-jaeger"
   timeout          = 500

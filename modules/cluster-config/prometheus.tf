@@ -39,7 +39,7 @@ resource "helm_release" "prometheus" {
   name       = "prometheus"
   repository = "https://prometheus-community.github.io/helm-charts"
   chart      = "prometheus"
-  version    = "21.1.2"
+  version    = "25.1.0"
   create_namespace = false
   namespace = "prometheus"
   timeout = 1500

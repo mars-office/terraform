@@ -26,7 +26,7 @@ resource "helm_release" "jaeger" {
   name       = "jaeger"
   repository = "https://jaegertracing.github.io/helm-charts"
   chart      = "jaeger"
-  version    = "0.69.1"
+  version    = "0.71.15"
   create_namespace = false
   namespace = "jaeger"
   timeout = 1500
