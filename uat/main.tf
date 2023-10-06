@@ -91,7 +91,7 @@ module "cluster-config" {
     ingestionKey = var.newRelicIngestionLicenseKey
   }
   prometheus = {
-    enabled = true
+    enabled = false
     adminPassword = var.prometheusPassword
     remoteWrite = false
   }
@@ -125,7 +125,7 @@ module "cluster-config" {
     enabled = true
   }
   keda = {
-    enabled = true
+    enabled = false
   }
   telepresence = {
     enabled = false
