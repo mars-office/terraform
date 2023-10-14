@@ -38,6 +38,9 @@ resources:
     memory: 1Mi
 falcosidekick:
   enabled: true
+  config:
+    slack:
+      webhookurl: ${var.falco.slackWebhook}
   replicaCount: 1
   webui:
     enabled: true

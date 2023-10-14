@@ -23,4 +23,5 @@ jaegerPassword="${JAEGER_PASSWORD}"
 prometheusPassword="${PROMETHEUS_PASSWORD}"
 linkerdPassword="${LINKERD_PASSWORD}"
 falcoAdminPassword = "${FALCO_ADMIN_PASSWORD}"
+falcoSlackWebhook = "${FALCO_SLACK_WEBHOOK}"
 ##

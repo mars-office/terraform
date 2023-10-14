@@ -129,8 +129,9 @@ module "cluster-config" {
     enabled = true
   }
   falco = {
-    enabled = false
+    enabled = true
     adminPassword = var.falcoAdminPassword
+    slackWebhook = var.falcoSlackWebhook
   }
 }
 
