@@ -10,6 +10,7 @@ resource "helm_release" "ingress-nginx" {
 
   values = [<<EOF
 controller:
+  allowSnippetAnnotations: true
   replicaCount: ${var.nodeCount}
   resources:
     requests:
