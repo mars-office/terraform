@@ -93,7 +93,7 @@ variable "linkerdPassword" {
   sensitive = true
 }
 
-variable "alinVdiPassword" {
+variable "falcoAdminPassword" {
   type = string
   sensitive = true
 }

@@ -15,11 +15,6 @@ EOF
   ]
 
   count = var.prometheus.enabled ? 1 : 0
-
-
-  depends_on = [
-    helm_release.letsencrypt-cluster-issuer[0]
-  ]
 }
 
 locals {

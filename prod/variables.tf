@@ -92,3 +92,9 @@ variable "linkerdPassword" {
   type = string
   sensitive = true
 }
+
+
+variable "falcoAdminPassword" {
+  type = string
+  sensitive = true
+}

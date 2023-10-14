@@ -58,4 +58,8 @@ module "cluster-config" {
   telepresence = {
     enabled = true
   }
+  falco = {
+    enabled = true
+    adminPassword = var.falcoAdminPassword
+  }
 }

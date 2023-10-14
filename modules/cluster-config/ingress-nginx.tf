@@ -35,4 +35,6 @@ EOF
   }
 
   count = var.ingress.enabled ? 1 : 0
+
+  depends_on = [ helm_release.linkerd-control-plane[0] ]
 }
