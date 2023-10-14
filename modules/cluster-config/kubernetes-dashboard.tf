@@ -33,8 +33,6 @@ resource "helm_release" "kubernetes-dashboard" {
   wait = true
 
   values = [<<EOF
-podAnnotations:
-  linkerd.io/inject: enabled
 metricsScraper:
   enabled: true
 ingress:

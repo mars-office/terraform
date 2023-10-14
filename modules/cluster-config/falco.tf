@@ -41,11 +41,7 @@ falcosidekick:
   replicaCount: 1
   webui:
     enabled: true
-    podAnnotations:
-      linkerd.io/inject: enabled
     redis:
-      podAnnotations:
-        linkerd.io/inject: enabled
     replicaCount: 1
     existingSecret: ${kubernetes_secret.falco-ui-config[0].metadata[0].name}
     ingress:
