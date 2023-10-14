@@ -32,6 +32,8 @@ resource "helm_release" "falco" {
 
   values = [<<EOF
 tty: false
+driver:
+  kind: ebpf
 resources:
   requests:
     cpu: 1m
