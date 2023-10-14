@@ -23,6 +23,8 @@ ingress:
       - kubeapps.${var.clusterDns}
       secretName: kubeapps-ingress-tls
 frontend:
+  podAnnotations:
+    linkerd.io/inject: enabled
   resources:
     limits:
       cpu: 250m
@@ -31,6 +33,8 @@ frontend:
       cpu: 1m
       memory: 1Mi
 dashboard:
+  podAnnotations:
+    linkerd.io/inject: enabled
   resources:
     limits:
       cpu: 250m
