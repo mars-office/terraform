@@ -130,7 +130,7 @@ module "cluster-config" {
     enabled = false
   }
   falco = {
-    enabled = true
+    enabled = false
     adminPassword = var.falcoAdminPassword
   }
 }
