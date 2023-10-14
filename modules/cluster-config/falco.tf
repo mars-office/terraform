@@ -10,8 +10,6 @@ resource "helm_release" "falco" {
 
   values = [<<EOF
 tty: false
-podAnnotations:
-  linkerd.io/inject: enabled
 resources:
   requests:
     cpu: 1m
@@ -35,8 +33,6 @@ resource "helm_release" "falcosidekick" {
   wait = true
 
   values = [<<EOF
-podAnnotations:
-  linkerd.io/inject: enabled
 replicaCount: 1
 webui:
   enabled: true
