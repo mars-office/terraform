@@ -99,11 +99,3 @@ variable "telepresence" {
     enabled = bool
   })
 }
-
-variable "falco" {
-  type = object({
-    enabled = bool
-    adminPassword = string
-    slackWebhook = string
-  })
-}

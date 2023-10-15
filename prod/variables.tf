@@ -92,14 +92,3 @@ variable "linkerdPassword" {
   type = string
   sensitive = true
 }
-
-
-variable "falcoAdminPassword" {
-  type = string
-  sensitive = true
-}
-
-variable "falcoSlackWebhook" {
-  type = string
-  sensitive = true
-}

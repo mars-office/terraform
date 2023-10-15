@@ -58,9 +58,4 @@ module "cluster-config" {
   telepresence = {
     enabled = true
   }
-  falco = {
-    enabled = false
-    adminPassword = var.falcoAdminPassword
-    slackWebhook = var.falcoSlackWebhook
-  }
 }
