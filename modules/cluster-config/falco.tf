@@ -35,6 +35,8 @@ tty: false
 driver:
   enabled: true
   kind: modern-bpf
+falco:
+  log_level: debug
 resources:
   requests:
     cpu: 1m
