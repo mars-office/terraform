@@ -32,6 +32,9 @@ resource "helm_release" "falco" {
 
   values = [<<EOF
 tty: false
+driver:
+  enabled: true
+  kind: modern-bpf
 resources:
   requests:
     cpu: 1m
