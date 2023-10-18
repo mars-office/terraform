@@ -52,7 +52,6 @@ ${local.remoteWriteNewRelic}
     annotations:
       kubernetes.io/ingress.class: nginx
       nginx.ingress.kubernetes.io/ssl-redirect: "true"
-      nginx.ingress.kubernetes.io/service-upstream: "true"
       cert-manager.io/cluster-issuer: ${var.certManager.issuer}
       nginx.ingress.kubernetes.io/auth-type: basic
       nginx.ingress.kubernetes.io/auth-secret: prometheus-basic-auth-secret
