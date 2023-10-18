@@ -99,3 +99,10 @@ variable "telepresence" {
     enabled = bool
   })
 }
+
+variable "trivy" {
+  type = object({
+    enabled = bool
+    slackWebhook = string
+  })
+}

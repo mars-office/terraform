@@ -58,4 +58,8 @@ module "cluster-config" {
   telepresence = {
     enabled = true
   }
+  trivy = {
+    enabled = true
+    slackWebhook = var.trivySlackWebhook
+  }
 }
