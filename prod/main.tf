@@ -132,6 +132,7 @@ module "cluster-config" {
   trivy = {
     enabled = true
     slackWebhook = var.trivySlackWebhook
+    posteePassword = var.posteePassword
   }
 }
 

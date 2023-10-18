@@ -104,5 +104,6 @@ variable "trivy" {
   type = object({
     enabled = bool
     slackWebhook = string
+    posteePassword = string
   })
 }

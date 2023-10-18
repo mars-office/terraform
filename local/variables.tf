@@ -57,3 +57,8 @@ variable "trivySlackWebhook" {
   type = string
   sensitive = true
 }
+
+variable "posteePassword" {
+  type = string
+  sensitive = true
+}
