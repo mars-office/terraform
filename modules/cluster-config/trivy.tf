@@ -12,26 +12,11 @@ resource "helm_release" "postee" {
 uiService:
   type: ClusterIP
 persistentVolume:
-  enabled: true
+  enabled: false
 resources:
   requests:
     cpu: 1m
     memory: 1Mi
-ingress:
-  enabled: true
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    cert-manager.io/cluster-issuer: ${var.certManager.issuer}
-  hosts:
-    - host: postee.${var.clusterDns}
-      paths:
-        - path: /
-          pathType: Prefix
-  tls:
-    - secretName: postee-ingress-tls
-      hosts:
-        - postee.${var.clusterDns}
 posteUi:
   user: admin
   pass: ${var.trivy.posteePassword}
