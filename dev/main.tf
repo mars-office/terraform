@@ -128,6 +128,10 @@ module "cluster-config" {
   telepresence = {
     enabled = true
   }
+  trivy = {
+    enabled = true
+    trivyWebhookUrl = var.trivyWebhookUrl
+  }
 }
 
 

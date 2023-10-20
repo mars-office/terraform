@@ -92,3 +92,8 @@ variable "linkerdPassword" {
   type = string
   sensitive = true
 }
+
+variable "trivyWebhookUrl" {
+  type = string
+  sensitive = true
+}

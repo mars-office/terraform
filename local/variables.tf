@@ -48,7 +48,7 @@ variable "linkerdPassword" {
   sensitive = true
 }
 
-variable "testVdiPassword" {
+variable "trivyWebhookUrl" {
   type = string
   sensitive = true
 }
