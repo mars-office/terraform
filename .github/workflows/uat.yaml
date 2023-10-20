@@ -11,14 +11,6 @@ on:
       - 'modules/**'
       - '.github/workflows/uat.yaml'
 
-  pull_request:
-    branches:
-      - main
-    paths:
-      - 'uat/**'
-      - 'modules/**'
-      - '.github/workflows/uat.yaml'
-
 jobs:
   terraform:
     permissions:

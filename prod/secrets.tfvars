@@ -1,4 +1,4 @@
-ociTenancyOcid = "${OCI_TENACY_OCID}"
+ociTenancyOcid = "${OCI_TENANCY_OCID}"
 ociCompartmentOcid = "${OCI_COMPARTMENT_OCID}"
 ociUserOcid = "${OCI_USER_OCID}"
 ociPrivateKey = <<-EOT
@@ -22,4 +22,5 @@ kubernetesDashboardPassword="${KUBERNETES_DASHBOARD_PASSWORD}"
 jaegerPassword="${JAEGER_PASSWORD}"
 prometheusPassword="${PROMETHEUS_PASSWORD}"
 linkerdPassword="${LINKERD_PASSWORD}"
+trivyWebhookUrl="${TRIVY_WEBHOOK_URL}"
 ##

@@ -11,14 +11,6 @@ on:
       - 'modules/**'
       - '.github/workflows/prod.yaml'
 
-  pull_request:
-    branches:
-      - main
-    paths:
-      - 'prod/**'
-      - 'modules/**'
-      - '.github/workflows/prod.yaml'
-
 jobs:
   terraform:
     permissions:
