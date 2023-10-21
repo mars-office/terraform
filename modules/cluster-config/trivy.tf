@@ -21,6 +21,9 @@ trivy:
       memory: 1Mi
 operator:
   webhookBroadcastURL: "${var.trivy.trivyWebhookUrl}"
+  scanJobsConcurrentLimit: 5
+trivyOperator:
+  additionalReportLabels: "env=${var.env},cluster=${var.clusterDns}"
 EOF
   ]
 
