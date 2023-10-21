@@ -97,3 +97,8 @@ variable "trivyWebhookUrl" {
   type = string
   sensitive = true
 }
+
+variable "posteeUiPassword" {
+  type = string
+  sensitive = true
+}
