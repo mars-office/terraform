@@ -24,7 +24,7 @@ locals {
       bearer_token: ${var.newRelic.ingestionKey}
       write_relabel_configs:
         - source_labels: [__name__]
-          regex: "node_disk_(.*)|node_memory_(.*)|node_cpu_(.*)|node_filesystem_(.*)|node_network_(.*)|node_procs_(.*)"
+          regex: "node_disk_(.*)|node_memory_(.*)|node_cpu_(.*)|node_network_(.*)
           action: keep
 
 EOF

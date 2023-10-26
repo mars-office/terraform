@@ -22,6 +22,4 @@ kubernetesDashboardPassword="${KUBERNETES_DASHBOARD_PASSWORD}"
 jaegerPassword="${JAEGER_PASSWORD}"
 prometheusPassword="${PROMETHEUS_PASSWORD}"
 linkerdPassword="${LINKERD_PASSWORD}"
-trivyWebhookUrl="${TRIVY_WEBHOOK_URL}"
-posteeUiPassword="${POSTEE_UI_PASSWORD}"
 ##

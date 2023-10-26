@@ -103,7 +103,5 @@ variable "telepresence" {
 variable "trivy" {
   type = object({
     enabled = bool
-    trivyWebhookUrl = string
-    posteeUiPassword = string
   })
 }

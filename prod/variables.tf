@@ -92,13 +92,3 @@ variable "linkerdPassword" {
   type = string
   sensitive = true
 }
-
-variable "trivyWebhookUrl" {
-  type = string
-  sensitive = true
-}
-
-variable "posteeUiPassword" {
-  type = string
-  sensitive = true
-}

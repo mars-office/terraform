@@ -131,9 +131,7 @@ module "cluster-config" {
     enabled = false
   }
   trivy = {
-    enabled = false
-    trivyWebhookUrl = var.trivyWebhookUrl
-    posteeUiPassword = var.posteeUiPassword
+    enabled = true
   }
 }
 
