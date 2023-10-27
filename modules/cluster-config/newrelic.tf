@@ -2,7 +2,7 @@ resource "helm_release" "newrelic" {
   name       = "newrelic"
   repository = "https://helm-charts.newrelic.com"
   chart      = "nri-bundle"
-  version    = "5.0.28"
+  version    = "5.0.42"
   create_namespace = true
   namespace = "newrelic"
   timeout = 1500
@@ -12,6 +12,8 @@ resource "helm_release" "newrelic" {
 logging:
   enabled: true
 nri-kube-events:
+  enabled: true
+kubeEvents:
   enabled: true
 newrelic-logging:
   lowDataMode: true
@@ -26,6 +28,8 @@ global:
   licenseKey: ${var.newRelic.ingestionKey}
   cluster: ${var.env}
   lowDataMode: true
+infrastructure:
+  enabled: true
 newrelic-infrastructure:
   enabled: true
   common:
