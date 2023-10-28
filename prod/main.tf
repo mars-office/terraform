@@ -132,6 +132,9 @@ module "cluster-config" {
   trivy = {
     enabled = true
   }
+  system-upgrade-controller = {
+    enabled = true
+  }
 }
 
 

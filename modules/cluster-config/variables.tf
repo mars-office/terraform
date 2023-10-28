@@ -105,3 +105,9 @@ variable "trivy" {
     enabled = bool
   })
 }
+
+variable "system-upgrade-controller" {
+  type = object({
+    enabled = bool
+  })
+}
