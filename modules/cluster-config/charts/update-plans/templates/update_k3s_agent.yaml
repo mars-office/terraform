@@ -1,0 +1,27 @@
+{{- if .Values.k3s.enabled }}
+apiVersion: upgrade.cattle.io/v1
+kind: Plan
+  labels:
+    k3s-upgrade: agent
+  name: k3s-agent
+spec:
+  concurrency: 2
+  drain:
+    force: true
+    skipWaitForDeleteTimeout: 60
+  nodeSelector:
+    matchExpressions:
+      - key: k3os.io/mode
+        operator: DoesNotExist
+      - key: node-role.kubernetes.io/control-plane
+        operator: DoesNotExist
+  prepare:
+    args:
+      - prepare
+      - k3s-server
+    image: rancher/k3s-upgrade
+  serviceAccountName: system-upgrade
+  upgrade:
+    image: rancher/k3s-upgrade
+  version: {{ .Values.k3s.version }}
+{{- end }}

@@ -63,5 +63,9 @@ module "cluster-config" {
   }
   system-upgrade-controller = {
     enabled = true
+    k3s = {
+      enabled = true
+      version = "v1.28.2+k3s1"
+    }
   }
 }

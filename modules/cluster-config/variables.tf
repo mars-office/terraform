@@ -109,5 +109,9 @@ variable "trivy" {
 variable "system-upgrade-controller" {
   type = object({
     enabled = bool
+    k3s = object({
+      enabled = bool
+      version = string
+    })
   })
 }
