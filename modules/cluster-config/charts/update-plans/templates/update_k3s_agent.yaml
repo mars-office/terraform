@@ -1,6 +1,7 @@
 {{- if .Values.k3s.enabled }}
 apiVersion: upgrade.cattle.io/v1
 kind: Plan
+metadata:
   labels:
     k3s-upgrade: agent
   name: k3s-agent
