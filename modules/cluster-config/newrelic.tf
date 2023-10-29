@@ -6,7 +6,6 @@ resource "helm_release" "newrelic" {
   create_namespace = true
   namespace = "newrelic"
   timeout = 1500
-  dependency_update = true
   wait = true
 
   values = [<<EOF
