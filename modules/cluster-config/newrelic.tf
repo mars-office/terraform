@@ -6,6 +6,7 @@ resource "helm_release" "newrelic" {
   create_namespace = true
   namespace = "newrelic"
   timeout = 1500
+  dependency_update = true
   wait = true
 
   values = [<<EOF
@@ -60,7 +61,9 @@ newrelic-infrastructure:
     config:
       selector: "app.kubernetes.io/name=kube-state-metrics"
 kube-state-metrics:
-  enabled: false
+  enabled: true
+  image:
+    tag: "v2.10.0"
 newrelic-prometheus-agent:
   enabled: false
 nri-metadata-injection:
