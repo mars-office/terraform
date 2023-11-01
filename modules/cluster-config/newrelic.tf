@@ -51,6 +51,8 @@ newrelic-infrastructure:
         cpu: 1m
         memory: 1Mi
   ksm:
+    config:
+      selector: "app.kubernetes.io/name=kube-state-metrics"
     resources:
       limits:
         memory: 850M  # Bump me up if KSM pod shows restarts.
