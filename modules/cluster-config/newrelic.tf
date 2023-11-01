@@ -60,7 +60,7 @@ newrelic-infrastructure:
     config:
       selector: "app.kubernetes.io/name=kube-state-metrics"
 kube-state-metrics:
-  enabled: true
+  enabled: false
   image:
     tag: "v2.10.0"
 newrelic-prometheus-agent:
