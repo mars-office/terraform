@@ -103,6 +103,7 @@ variable "telepresence" {
 variable "trivy" {
   type = object({
     enabled = bool
+    webhookUrl = string
   })
 }
 
