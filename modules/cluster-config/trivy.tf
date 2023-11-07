@@ -9,7 +9,6 @@ resource "helm_release" "trivy-operator" {
   wait = true
 
   values = [<<EOF
-targetWorkloads: "pod"
 trivy:
   additionalVulnerabilityReportFields: "Description,CVSS,Target,Class"
   server:
