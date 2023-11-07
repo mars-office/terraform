@@ -9,7 +9,9 @@ resource "helm_release" "trivy-operator" {
   wait = true
 
   values = [<<EOF
+targetWorkloads: "pod"
 trivy:
+  additionalVulnerabilityReportFields: "Description,CVSS,Target,Class"
   server:
     resources:
       requests:
@@ -21,6 +23,13 @@ trivy:
       memory: 1Mi
 operator:
   scanJobsConcurrentLimit: 5
+  clusterComplianceEnabled: false
+  configAuditScannerEnabled: false
+  exposedSecretScannerEnabled: false
+  rbacAssessmentScannerEnabled: false
+  sbomGenerationEnabled: false
+  infraAssessmentScannerEnabled: false
+  webhookBroadcastTimeout: 60s
   webhookBroadcastURL: "${var.trivy.webhookUrl}"
 trivyOperator:
   additionalReportLabels: "env=${var.env},cluster=${var.clusterDns}"
