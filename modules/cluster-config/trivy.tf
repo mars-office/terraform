@@ -32,6 +32,7 @@ operator:
   webhookBroadcastURL: "${var.trivy.webhookUrl}"
 trivyOperator:
   additionalReportLabels: "env=${var.env},cluster=${var.clusterDns}"
+  skipInitContainers: true
 EOF
   ]
 
