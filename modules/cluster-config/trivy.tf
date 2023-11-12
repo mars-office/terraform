@@ -29,7 +29,7 @@ operator:
   sbomGenerationEnabled: false
   infraAssessmentScannerEnabled: false
   webhookBroadcastTimeout: 60s
-  webhookBroadcastURL: "${var.trivy.webhookUrl}"
+  webhookBroadcastURL: ""
 trivyOperator:
   additionalReportLabels: "env=${var.env},cluster=${var.clusterDns}"
   skipInitContainers: true

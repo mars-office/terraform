@@ -132,7 +132,6 @@ module "cluster-config" {
   }
   trivy = {
     enabled = true
-    webhookUrl = var.trivyWebhookUrl
   }
   system-upgrade-controller = {
     enabled = true
