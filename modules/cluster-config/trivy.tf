@@ -10,7 +10,7 @@ resource "helm_release" "trivy-operator-newrelic-agent" {
   values = [<<EOF
 newRelic:
   apiKey: "${var.trivy.newRelicApiKey}"
-  ingestionKey: "${var.trivy.newRelicIngestionKey}"
+  ingestKey: "${var.trivy.newRelicIngestionKey}"
   isEuRegion: true
 EOF
   ]
@@ -52,7 +52,7 @@ operator:
   sbomGenerationEnabled: false
   infraAssessmentScannerEnabled: false
   webhookBroadcastTimeout: 60s
-  webhookBroadcastURL: ${var.newRelic.enabled ? "http://trivy-operator-newrelic-agent/api/webhook" : ""}
+  webhookBroadcastURL: "${var.newRelic.enabled ? "http://trivy-operator-newrelic-agent/api/webhook" : ""}"
 trivyOperator:
   additionalReportLabels: "env=${var.env},cluster=${var.clusterDns}"
   skipInitContainers: true
