@@ -133,6 +133,7 @@ module "cluster-config" {
     enabled = true
     newRelicApiKey = var.newRelicApiKey
     newRelicIngestionKey = var.newRelicIngestionLicenseKey
+    ghToken = var.ghToken
   }
   system-upgrade-controller = {
     enabled = true
