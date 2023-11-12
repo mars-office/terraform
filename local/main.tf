@@ -62,7 +62,6 @@ module "cluster-config" {
     enabled = false
     newRelicApiKey = var.newRelicApiKey
     newRelicIngestionKey = var.newRelicIngestionLicenseKey
-    ghToken = var.ghToken
   }
   system-upgrade-controller = {
     enabled = true

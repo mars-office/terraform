@@ -15,9 +15,6 @@ newRelic:
 EOF
   ]
 
-  repository_username = "mars-office"
-  repository_password = var.trivy.ghToken
-
   count = var.trivy.enabled && var.newRelic.enabled ? 1 : 0
 
   depends_on = [ helm_release.linkerd-control-plane[0], helm_release.newrelic[0] ]

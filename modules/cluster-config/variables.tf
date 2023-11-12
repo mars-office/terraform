@@ -105,7 +105,6 @@ variable "trivy" {
     enabled = bool
     newRelicApiKey = string
     newRelicIngestionKey = string
-    ghToken = string
   })
 }
 
