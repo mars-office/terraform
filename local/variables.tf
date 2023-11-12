@@ -47,3 +47,8 @@ variable "linkerdPassword" {
   type = string
   sensitive = true
 }
+
+variable "newRelicApiKey" {
+  type = string
+  sensitive = true
+}

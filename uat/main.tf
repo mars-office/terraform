@@ -132,6 +132,8 @@ module "cluster-config" {
   }
   trivy = {
     enabled = true
+    newRelicApiKey = var.newRelicApiKey
+    newRelicIngestionKey = var.newRelicIngestionLicenseKey
   }
   system-upgrade-controller = {
     enabled = true

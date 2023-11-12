@@ -103,6 +103,8 @@ variable "telepresence" {
 variable "trivy" {
   type = object({
     enabled = bool
+    newRelicApiKey = string
+    newRelicIngestionKey = string
   })
 }
 
