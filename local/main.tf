@@ -64,9 +64,9 @@ module "cluster-config" {
     newRelicIngestionKey = var.newRelicIngestionLicenseKey
   }
   system-upgrade-controller = {
-    enabled = true
+    enabled = false
     k3s = {
-      enabled = true
+      enabled = false
       version = "v1.28.3+k3s2"
     }
   }
