@@ -139,7 +139,7 @@ module "cluster-config" {
     enabled = true
     k3s = {
       enabled = true
-      version = "v1.28.2+k3s1"
+      version = "v1.28.3+k3s2"
     }
   }
 }
