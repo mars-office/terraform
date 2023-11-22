@@ -1,7 +1,7 @@
 resource "helm_release" "trivy-operator-newrelic-agent" {
   name       = "trivy-operator-newrelic-agent"
   chart      = "oci://ghcr.io/mars-office/trivy-operator-newrelic-agent"
-  version    = "0.0.8"
+  version    = "0.0.13"
   create_namespace = true
   namespace = "trivy-system"
   timeout = 1500
