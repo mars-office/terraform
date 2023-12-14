@@ -126,6 +126,26 @@ resource "oci_core_network_security_group_security_rule" "allow_https_from_all" 
   }
 }
 
+resource "oci_core_network_security_group_security_rule" "allow_mqtts_from_all" {
+  network_security_group_id = oci_core_network_security_group.nsg.id
+  direction                 = "INGRESS"
+  protocol                  = 6 # tcp
+
+  description = "Allow MQTTS from all"
+
+  source      = "0.0.0.0/0"
+  source_type = "CIDR_BLOCK"
+  stateless   = false
+
+  tcp_options {
+    destination_port_range {
+      max = 8883
+      min = 8883
+    }
+  }
+}
+
+
 resource "oci_core_network_security_group_security_rule" "allow_kubeapi_from_all" {
   network_security_group_id = oci_core_network_security_group.nsg.id
   direction                 = "INGRESS"
