@@ -11,7 +11,7 @@ resource "helm_release" "haproxy" {
   values = [<<EOF
 controller:
   replicaCount: 1
-  hostNetwork: true
+  hostNetwork: false
   ingressClassResource:
     enabled: true
 EOF
