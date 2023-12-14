@@ -99,7 +99,11 @@ variable "telepresence" {
     enabled = bool
   })
 }
-
+variable "haproxy" {
+  type = object({
+    enabled = bool
+  })
+}
 variable "trivy" {
   type = object({
     enabled = bool

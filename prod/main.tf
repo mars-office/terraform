@@ -141,6 +141,9 @@ module "cluster-config" {
       version = "v1.28.3+k3s2"
     }
   }
+  haproxy = {
+    enabled = true
+  }
 }
 
 
