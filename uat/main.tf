@@ -143,7 +143,7 @@ module "cluster-config" {
     }
   }
   haproxy = {
-    enabled = true
+    enabled = false
   }
 }
 
