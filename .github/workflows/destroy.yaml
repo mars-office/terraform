@@ -5,7 +5,9 @@ on:
     inputs:
       env:
         type: environment
-
+concurrency:
+  group: ${{ github.workflow }}-${{ inputs.env }}
+  cancel-in-progress: false
 jobs:
   terraform_destroy:
     permissions:

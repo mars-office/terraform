@@ -10,7 +10,9 @@ on:
       - 'uat/**'
       - 'modules/**'
       - '.github/workflows/uat.yaml'
-
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 jobs:
   terraform:
     permissions:

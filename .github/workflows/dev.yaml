@@ -18,7 +18,9 @@ on:
       - 'dev/**'
       - 'modules/**'
       - '.github/workflows/dev.yaml'
-
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 jobs:
   terraform:
     permissions:

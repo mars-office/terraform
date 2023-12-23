@@ -10,7 +10,9 @@ on:
       - 'prod/**'
       - 'modules/**'
       - '.github/workflows/prod.yaml'
-
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 jobs:
   terraform:
     permissions:
