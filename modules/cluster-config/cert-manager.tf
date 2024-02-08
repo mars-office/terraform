@@ -66,14 +66,13 @@ EOF
 }
 
 
-resource "helm_release" "root-ca" {
+resource "helm_release" "root-ca-crt" {
   name       = "root-ca"
   chart      = "${path.module}/charts/root-ca"
   create_namespace = false
   namespace = "cert-manager"
   timeout = 1500
   wait = true
-
   count = var.certManager.enabled ? 1 : 0
 
   depends_on = [
@@ -102,6 +101,6 @@ EOF
   count = var.certManager.enabled ? 1 : 0
 
   depends_on = [
-    helm_release.root-ca[0]
+    helm_release.root-ca-crt[0]
   ]
 }

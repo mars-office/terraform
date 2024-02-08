@@ -9,9 +9,11 @@ spec:
   duration: 438290h # 1y
   renewBefore: 360h # 15d
   privateKey:
-    algorithm: ECDSA
-    size: 256
+    algorithm: RSA
+    encoding: PKCS8
+    size: 3072
   issuerRef:
     name: self-signed
     kind: ClusterIssuer
     group: cert-manager.io
+    
