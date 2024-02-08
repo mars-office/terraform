@@ -9,9 +9,8 @@ spec:
   duration: 438290h # 1y
   renewBefore: 360h # 15d
   privateKey:
-    algorithm: RSA
-    encoding: PKCS8
-    size: 3072
+    algorithm: ECDSA
+    size: 256
   issuerRef:
     name: self-signed
     kind: ClusterIssuer
