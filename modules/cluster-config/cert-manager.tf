@@ -67,7 +67,7 @@ EOF
 
 
 resource "helm_release" "root-ca-crt" {
-  name       = "root-ca"
+  name       = "root-ca-crt"
   chart      = "${path.module}/charts/root-ca"
   create_namespace = false
   namespace = "cert-manager"
@@ -80,8 +80,8 @@ resource "helm_release" "root-ca-crt" {
   ]
 }
 
-resource "helm_release" "root-ca-cert-manager-issuers" {
-  name       = "root-ca-cert-manager-issuers"
+resource "helm_release" "root-ca-iss" {
+  name       = "root-ca-iss"
   repository = "https://charts.adfinis.com"
   chart      = "cert-manager-issuers"
   version    = "0.2.5"
