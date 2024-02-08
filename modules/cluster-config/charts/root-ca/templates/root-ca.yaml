@@ -6,7 +6,7 @@ spec:
   isCA: true
   commonName: root-ca
   secretName: root-ca
-  duration: 87660h # 1y
+  duration: 438290h # 1y
   renewBefore: 360h # 15d
   privateKey:
     algorithm: ECDSA
