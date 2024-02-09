@@ -66,8 +66,8 @@ EOF
 }
 
 
-resource "helm_release" "root-ca-crt" {
-  name       = "root-ca-crt"
+resource "helm_release" "root-ca" {
+  name       = "root-ca"
   chart      = "${path.module}/charts/root-ca"
   create_namespace = false
   namespace = "cert-manager"
@@ -80,8 +80,8 @@ resource "helm_release" "root-ca-crt" {
   ]
 }
 
-resource "helm_release" "root-ca-iss" {
-  name       = "root-ca-iss"
+resource "helm_release" "root-ca-issuer" {
+  name       = "root-ca-issuer"
   repository = "https://charts.adfinis.com"
   chart      = "cert-manager-issuers"
   version    = "0.2.5"
@@ -101,6 +101,6 @@ EOF
   count = var.certManager.enabled ? 1 : 0
 
   depends_on = [
-    helm_release.root-ca-crt[0]
+    helm_release.root-ca[0]
   ]
 }
