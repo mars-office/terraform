@@ -26,7 +26,7 @@ resource "helm_release" "jaeger" {
   name       = "jaeger"
   repository = "https://jaegertracing.github.io/helm-charts"
   chart      = "jaeger"
-  version    = "0.72.1"
+  version    = "1.0.0"
   create_namespace = false
   namespace = "jaeger"
   timeout = 1500
@@ -44,6 +44,13 @@ query:
   enabled: false
 allInOne:
   enabled: true
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 256m
+      memory: 128Mi
   ingress:
     enabled: true
     pathType: Prefix
