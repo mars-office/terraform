@@ -126,7 +126,7 @@ module "cluster-config" {
     enabled = false
   }
   telepresence = {
-    enabled = true
+    enabled = false
   }
   trivy = {
     enabled = true
