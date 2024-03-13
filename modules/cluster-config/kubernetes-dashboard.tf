@@ -33,23 +33,28 @@ resource "helm_release" "kubernetes-dashboard" {
   wait = true
 
   values = [<<EOF
+cert-manager:
+  enabled: false
+nginx:
+  enabled: false
 metricsScraper:
   enabled: true
-ingress:
-  enabled: true
-  annotations:
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    cert-manager.io/cluster-issuer: ${var.certManager.issuer}
-    nginx.ingress.kubernetes.io/auth-type: basic
-    nginx.ingress.kubernetes.io/auth-secret: kubernetes-dashboard-basic-auth-secret
-    nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required Bro'
-  hosts:
-    - dashboard.${var.clusterDns}
-  tls:
-    - secretName: kubernetes-dashboard-ingress-tls
-      hosts:
-        - dashboard.${var.clusterDns}
+app:
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      nginx.ingress.kubernetes.io/ssl-redirect: "true"
+      cert-manager.io/cluster-issuer: ${var.certManager.issuer}
+      nginx.ingress.kubernetes.io/auth-type: basic
+      nginx.ingress.kubernetes.io/auth-secret: kubernetes-dashboard-basic-auth-secret
+      nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required Bro'
+    hosts:
+      - dashboard.${var.clusterDns}
+    tls:
+      - secretName: kubernetes-dashboard-ingress-tls
+        hosts:
+          - dashboard.${var.clusterDns}
 resources:
   requests:
     cpu: 1m
