@@ -2,7 +2,7 @@ resource "helm_release" "newrelic" {
   name       = "newrelic"
   repository = "https://helm-charts.newrelic.com"
   chart      = "nri-bundle"
-  version    = "5.0.66"
+  version    = "5.0.69"
   create_namespace = true
   namespace = "newrelic"
   timeout = 1500
