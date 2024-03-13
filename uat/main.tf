@@ -116,7 +116,7 @@ module "cluster-config" {
   }
   kubernetesDashboard = {
     adminPassword = var.kubernetesDashboardPassword
-    enabled = true
+    enabled = false
   }
   kubeapps = {
     enabled = false
