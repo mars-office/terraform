@@ -8,6 +8,8 @@ export SERVER="${k3s_url}"
 export PUBLICIP=$(curl -s ifconfig.co)
 export CLUSTERDNS="${cluster_dns}"
 
+echo fs.inotify.max_user_instances=524288 | tee -a /etc/sysctl.conf && sudo sysctl -p
+
 # Disable firewall
 /usr/sbin/netfilter-persistent stop
 /usr/sbin/netfilter-persistent flush
