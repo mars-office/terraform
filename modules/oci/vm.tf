@@ -54,6 +54,12 @@ resource "oci_core_instance" "vm" {
     boot_volume_size_in_gbs = "${each.value.ssdSize}"
   }
   preserve_boot_volume = false
+
+  lifecycle {
+    ignore_changes = [ 
+      metadata.user_data
+    ]
+  }
 }
 
 
@@ -113,4 +119,10 @@ resource "oci_core_instance" "vm_primary" {
     boot_volume_size_in_gbs = "${each.value.ssdSize}"
   }
   preserve_boot_volume = false
+
+  lifecycle {
+    ignore_changes = [ 
+      metadata.user_data
+    ]
+  }
 }
