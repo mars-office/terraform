@@ -57,7 +57,7 @@ resource "oci_core_instance" "vm" {
 
   lifecycle {
     ignore_changes = [ 
-      metadata.user_data
+      metadata
     ]
   }
 }
@@ -122,7 +122,7 @@ resource "oci_core_instance" "vm_primary" {
 
   lifecycle {
     ignore_changes = [ 
-      metadata.user_data
+      metadata
     ]
   }
 }
