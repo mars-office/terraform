@@ -35,7 +35,7 @@ resource "helm_release" "jaeger" {
 provisionDataStore:
   cassandra: false
 storage:
-  type: none
+  type: memory
 agent:
   enabled: false
 collector:
