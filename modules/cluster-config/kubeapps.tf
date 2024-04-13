@@ -2,7 +2,7 @@ resource "helm_release" "kubeapps" {
   name             = "kubeapps"
   repository       = "https://charts.bitnami.com/bitnami"
   chart            = "kubeapps"
-  version          = "14.7.2"
+  version          = "15.0.2"
   create_namespace = true
   namespace        = "kubeapps"
   timeout          = 500
