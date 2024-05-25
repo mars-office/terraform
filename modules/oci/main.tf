@@ -2,15 +2,15 @@ terraform {
   required_providers {
     oci = {
       source  = "oracle/oci"
-      version = "5.36.0"
+      version = "5.43.0"
     }
     random = {
       source = "hashicorp/random"
-      version = "3.6.0"
+      version = "3.6.2"
     }
     cloudinit = {
       source = "hashicorp/cloudinit"
-      version = "2.3.3"
+      version = "2.3.4"
     }
   }
 }

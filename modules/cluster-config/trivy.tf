@@ -25,7 +25,7 @@ resource "helm_release" "trivy-operator" {
   name       = "trivy-operator"
   repository = "https://aquasecurity.github.io/helm-charts/"
   chart      = "trivy-operator"
-  version    = "0.22.1"
+  version    = "0.23.1"
   create_namespace = false
   namespace = "trivy-system"
   timeout = 1500

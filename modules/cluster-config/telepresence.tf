@@ -2,7 +2,7 @@ resource "helm_release" "telepresence" {
   name       = "traffic-manager"
   repository = "https://app.getambassador.io"
   chart      = "telepresence"
-  version    = "2.19.3"
+  version    = "2.19.5"
   create_namespace = true
   namespace = "ambassador"
   timeout = 1500

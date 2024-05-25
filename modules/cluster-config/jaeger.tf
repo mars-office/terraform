@@ -46,10 +46,10 @@ allInOne:
   enabled: true
   resources:
     limits:
-      cpu: 500m
+      cpu: 300m
       memory: 512Mi
     requests:
-      cpu: 256m
+      cpu: 50m
       memory: 128Mi
   ingress:
     enabled: true
